@@ -1,0 +1,11 @@
+class Constants:
+
+	UNIQUE_KEY = 'ic_'
+	DATABASE_ERROR = 500
+	INVALID_INPUT = 400
+	SUCCESS_CODE = 200
+	INVALID_EMAIL = 'Invalid email id'
+	STATUS_FAILED = 'Failed'
+	STATUS_SUCCESS = 'Success'
+	INVALID_JSON = 'Invalid JSON'
+	BASE_ID_COOK = 100000

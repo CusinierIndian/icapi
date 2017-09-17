@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Cuisinier</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/static/css/app.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg transparent-navbar navbar-light bg-light animated fadeInDown">
+            <a class="navbar-brand" href="#home">
+                <img src="/static/images/logo320.png" class="brand-logo"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#why-us">Why us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#career">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-us">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <span class="anchor" id="home"></span> -->
+        <div id="home" class="home animated fadeInUp">
+            <div class="home-content img-container">
+                <div id="countdown" class="justify-content-center animated fadeInUp">
+                    <div class="row justify-content-center">
+                        <h1 class="section-tittle col-12 align-self-center">We are Coming Soon</h1>
+                    </div>
+                    <div id="tiles" class="row justify-content-center conter-span-no"></div>
+                    <div class="row justify-content-center conter-span-days">
+                        <div>Days</div>
+                        <div>Hours</div>
+                        <div>Mins</div>
+                        <div>Secs</div>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="input-group col-lg-4 col-xl-3">
+                            <input type="email" class="form-control" id="subscribe_user_email" name="email" placeholder="Email" aria-label="email" required="true">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit" onclick="subscribe_user()">Subscribe</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="why-us" class="why-us animated fadeInUp">
+            <div class="why-us-content">
+                <div class="row justify-content-center">
+                    <div class="why-us-heading">Why Indian Cuisinier ??</div>
+                </div>
+                <div class="row h-100">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <i class="fa fa-black-tie why-us-logo"></i>
+                                </div>
+                                <h5 class="card-title">Professional</h5>
+                                <p class="card-text">We at Indian Cuisinier prioritise discipline and work with a wide diversity of verified professionals who are highly skilled experts in cooking. We provide trained and well-groomed cooks who can meet expectations of our esteemed customers and can cook a healthy and tasty meal for them.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <i class="fa fa-inr why-us-logo"></i>
+                                </div>
+                                <h5 class="card-title">Economical</h5>
+                                <p class="card-text">Affordable and transparent - are the two keywords that define our economical and pocket friendly prices for the cook services. Indian Cuisinier provides the best services at the minimal rates which are both economical and highly transparent in nature.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <i class="fa fa-thumbs-up why-us-logo"></i>
+                                </div>
+                                <h5 class="card-title">Quality</h5>
+                                <p class="card-text">Indian Cuisinier believes that a healthy life begins with a healthy stomach. We make sure that our cooks serve a healthy meal for you without compromising your taste. Also the neat and groomed appearance of our cooks adds a hygienic ambience to your kitchen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <i class="fa fa-handshake-o why-us-logo"></i>
+                                </div>
+                                <h5 class="card-title">Trust</h5>
+                                <p class="card-text">Our prime objective is to provide the best cook service to our customers. Hence, we are committed towards catering to the requirements of our customers. In case the appointed cook becomes unavailable, we assure to provide the same calibre work without compromising your taste. We assure our customers of zero absenteeism.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <span class="anchor" id="services"></span> -->
+        <div id="services" class="service animated fadeInUp">
+            <div class="service-content">
+                <div class="row justify-content-center">
+                    <div class="service-heading">Services</div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <!-- <div class="col-md-auto col-lg-auto col-xl-3"></div> -->
+                    <div class="no-padding width-lg col-md-4 col-lg-3 col-xl-2 col-sm-12 col-xs-12">
+                        <div class="service-card">
+                            <img class="service-card-img-top" src="images/cooking.jpg" alt="Card image cap">
+                            <div class="service-card-block animated">
+                                <h4 class="service-card-title">Card title</h4>
+                                <p class="service-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="service-card-footer">
+                                <button class="btn btn-info">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-padding  width-lg col-md-4 col-lg-3 col-xl-2 col-sm-12 col-xs-12">
+                        <div class="service-card">
+                            <img class="service-card-img-top" src="images/cooking.jpg" alt="Card image cap">
+                            <div class="service-card-block animated">
+                                <h4 class="service-card-title">Card title</h4>
+                                <p class="service-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="service-card-footer">
+                                <button class="btn btn-info">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-padding  width-lg col-md-4 col-lg-3 col-xl-2 col-sm-12 col-xs-12">
+                        <div class="service-card">
+                            <img class="service-card-img-top" src="images/cooking.jpg" alt="Card image cap">
+                            <div class="service-card-block animated">
+                                <h4 class="service-card-title">Card title</h4>
+                                <p class="service-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="service-card-footer">
+                                <button class="btn btn-info">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-auto col-lg-auto col-xl-3"></div> -->
+                </div>
+            </div>
+        </div>
+        <!-- <span class="anchor" id="career"></span> -->
+        <div id="career" class="career animated fadeInUp">
+            <div class="career-content carrier-img">
+                <div class="row justify-content-center margin-20">
+                    <h4 class="career-heading">Career with Indian Cuisinier</h4>
+                </div>
+                <div class="row margin-20">
+                    <div class="col-lg-4 col-xl-4 col-md-3"></div>
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-xs-12 col-sm-12 career-msg">
+                        <p class="card-text">We and our culture make Indian Cuisinier a platform where leaders burgeon. We're a company of inquisitive pioneers, and we get our energy from our customers’ satisfaction. We measure success against the possible, not the probable, and are capable of embracing ambiguity and uncertainty and we communicate to inspire. We welcome and encourage risk taking innovative ideas and thoughts. We respect every individual and culture, work collaboratively by driving engagement and commitment.
+                        </p>
+                        <p class="center">Come join us and let’s add taste to people’s life.</p>
+                        <div class="row justify-content-center">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#apply-modal">Apply</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-4 col-md-3 col-xs-12 col-sm-12"></div>
+                </div>
+            </div>
+        </div>
+        <!-- <span class="anchor" id="contact-us"></span> -->
+        <div id="contact-us" class="contact-us animated fadeInUp">
+            <div class="contact-us-content">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-2 col-md-2"></div>
+                    <div class="col-md-4 col-xl-4 col-lg-4 col-sm-12 col-xs-12 contact-us-border">
+                        <div class="service-heading">Contact Us</div>
+                        <form id="cform" name="contact-form">
+                            <div class="form-group">
+                                <label for="contactName">Name</label>
+                                <input type="text" class="form-control form-control-input" id="contact_name" placeholder="Enter name" />
+                                <small class="form-control-feedback-warning">Name field cannot
+                                    be empty!</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email</label>
+                                <input type="email" class="form-control form-control-input" id="contact_email" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small class="form-control-feedback-warning">Enter valid email!</small>
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Phone</label>
+                                <input type="text" class="form-control form-control-input" id="contact_phone_no" placeholder="Enter phone number.."> <small id="cformPhone" class="form-control-feedback-warning">Minimum
+                                    10 characters is required</small>
+                            </div>
+                            <div id="contact_error"></div>
+                            <button type="button" id="btnContact" class="btn btn-primary" onclick="contactUs()">Submit</button>
+                        </form>
+                    </div>
+                    <div class="col-md-4 col-xl-4 col-lg-4 col-sm-12 col-xs-12">
+                        <div class="service-heading">Address</div>
+                        <div id="map">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="row justify-content-center footer-content">
+            <div class="col-12 align-self-center padding-15">
+                <a class="link-page facebook-icon" href="https://www.facebook.com/indiancuisinier" target="blank"><i class="fa fa-facebook"></i></a>
+                <a class="link-page instagram-icon" href="https://www.instagram.com/indiancuisinier/" target="blank"><i class="fa fa-instagram"></i></a>
+                <a class="link-page twitter-icon" href="https://twitter.com/indiancuisinier" target="blank"><i class="fa fa-twitter"></i></a>
+            </div>
+            <div class="col-12 align-self-center">
+                Copyright@ indianCuisinier.com
+            </div>
+        </footer>
+        <!-- Modal for apply in Indian Cuisinier -->
+        <div class="modal fade" id="apply-modal" tabindex="-1" role="dialog" aria-labelledby="apply-modal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Work with
+                            Indian Cuisiner</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                            <div class="form-group">
+                                <label for="designation" class="form-control-label">Designation</label>
+                                <select class="form-control" id="apply_designation" disabled>
+                                    <option value="cook" selected>Cook</option>
+                                    <option value="customer">Customer</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="form-control-label">Name:</label>
+                                <input class="form-control form-control-input" type="text" id="apply_name" placeholder="Name" required="true" /> 
+                                <small id="name" class="form-control-feedback-warning">Name field cannot be empty!</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-control-label">Email:</label>
+                                <input class="form-control form-control-input" type="email" id="apply_email" placeholder="abc@gmail.com"  required="true" /> 
+                                <small class="form-control-feedback-warning">Enter valid email!</small> 
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone-no" class="form-control-label">Phone No:</label>
+                                <input class="form-control form-control-input" type="text" id="apply_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
+                                <small id="phnum" class="form-control-feedback-warning">Minimum 10 number is required</small>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div id="apply_error" class="pull-left"></div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info" onclick="applyForCarrer(this)">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- scripts  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/static/js/app.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0SDFw8GylrVTzbBw8lcgCaFpan2koddA&callback=initMap"></script>
+        <script type="text/javascript">
+        function initMap() {
+            var locationRio = { lat: 17.441603, lng: 78.365077 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: locationRio,
+                gestureHandling: 'cooperative'
+            });
+            var marker = new google.maps.Marker({
+                position: locationRio,
+                map: map,
+                title: 'Indian Cuisinier'
+            });
+        }
+        </script>
+        </script>
+    </div>
+</body>
+
+</html>
