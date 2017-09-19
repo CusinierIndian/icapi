@@ -1,5 +1,5 @@
 from constants.constants import Constants
-from models.models import SubscribedUser, ContactUs,Careers, CookBasicDetails, db
+from models.models import SubscribedUser, ContactUs,Careers, CookBasicDetails, TemporaryBooking, db
 from sqlalchemy import update
 class DBOperations:
 
@@ -80,6 +80,51 @@ class DBOperations:
 			return -1
 		else:
 			return len(response)
+
+	#Apply operations on Table
+	def applyOperations(self, optAndCol, model):
+		opt = optAndCol.get('operation')
+		col = optAndCol.get('col')
+		if opt == '=':
+			try:
+				response = model.query.filter(col == optAndCol.get('value')).all()
+			except Exception as e:
+				return e.message
+			else:
+				print response
+				return response
+
+		elif opt == 'ilike':
+			try:
+				response = model.query.filter(col.ilike(optAndCol.get('value'))).all()
+			except Exception as e:
+				return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
+			else:
+				return response
+
+
+	#Get cook details
+	def getCookDetails(self, optAndCol):
+		if optAndCol :
+			response = self.applyOperations(optAndCol, CookBasicDetails)
+			return self.transformer.transformCookBasicDetailsList(response, Constants.STATUS_SUCCESS,Constants.SUCCESS_CODE )
+		else:
+			response = CookBasicDetails.query.all()
+			return self.transformer.transformCookBasicDetailsList(response, Constants.STATUS_SUCCESS,Constants.SUCCESS_CODE )
+
+
+	#Temporary cook booking
+	def bookACook(self, cookBookingDetails):
+		try:
+			self.session.add(cookBookingDetails)
+			self.session.commit()
+		except Exception as e:
+			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
+
+		else:
+			return self.transformer.transformerBookACook(TemporaryBooking.query.filter_by(id=cookBookingDetails.id).first(), Constants.STATUS_SUCCESS,Constants.SUCCESS_CODE)
+
+
 
 
 

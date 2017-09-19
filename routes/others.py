@@ -35,6 +35,20 @@ def contactUs():
 		from controllers.controllers import ContactUsController
 		return jsonify(ContactUsController().insertContactUsDetails(contactUsDetails))
 
+#Temporary Cook Booking
+@others.route('/cookbooking', methods=['POST'])
+def bookCook():
+	try:
+		cookBookingDetails = request.get_json()
+	except Exception as e:
+		return jsonify(ExceptionTransformers().transformException(Constants.INVALID_INPUT, Constants.INVALID_JSON, Constants.STATUS_FAILED))
+	else:
+		from controllers.controllers import BookingController
+		return jsonify(BookingController().bookACook(cookBookingDetails))
+
+
+
+
 
 
 

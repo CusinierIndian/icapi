@@ -90,4 +90,32 @@ class CookBasicDetails(Base):
 	companyId = Column(String(15), unique=True, nullable=False)
 	email = Column(String(30), unique=True, nullable=True)
 
+class TemporaryBooking(Base):
+
+	__tablename__ = 'temporary_booking'
+
+	def __init__(self, id, customerName, customerLocation, customerPhone, customerEmail, customerPreference, isRequiredInMorning, isRequiredInEvening, numberOfMembers):
+		self.id = id
+		self.customerName = customerName
+		self.customerLocation = customerLocation
+		self.customerPhone = customerPhone
+		self.customerEmail = customerEmail
+		self.customerPreference = customerPreference
+		self.isRequiredInMorning = isRequiredInMorning
+		self.isRequiredInEvening = isRequiredInEvening
+		self.numberOfMembers = numberOfMembers
+
+
+	id = Column(String(100) , primary_key=True, nullable=False)
+	customerName = Column(String(255), nullable=False)
+	customerLocation = Column(String(255), nullable=False)
+	customerPhone = Column(String(15), nullable=False, unique=True)
+	customerEmail = Column(String(50), nullable=False,unique=True)
+	customerPreference = Column(String(30), nullable=False)
+	isRequiredInMorning = Column(Boolean, nullable=False)
+	isRequiredInEvening = Column(Boolean, nullable=False)
+	numberOfMembers = Column(Integer, nullable=False)
+
+
+
 

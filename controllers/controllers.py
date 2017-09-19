@@ -53,6 +53,16 @@ class AdminController(BaseController):
 
 		return (self.dbConnection.addCookBasicDetais(cookBasicDetails))
 
+	#get cook details
+	def getCookDetails(self, queryParams):
+		from transformer.keytransformer import searchable
+		from models.models import CookBasicDetails
+		optAndCol = searchable(queryParams, CookBasicDetails)
+		print optAndCol
+		return self.dbConnection.getCookDetails(optAndCol)
+
+				
+
 
 
 
@@ -87,6 +97,31 @@ class ContactUsController(BaseController):
 			return self.dbConnection.insertContactUsDetails(contactUsModel)
 		else:
 			return ExceptionTransformers().transformExceptionContactUs(Constants.INVALID_INPUT, Constants.INVALID_EMAIL, Constants.STATUS_FAILED)
+
+
+#Temporary controller for booking a cook
+class BookingController(BaseController):
+	def __init__(self):
+		self.dbConnection = DBOperations()
+
+	def bookACook(self, cookBookingDetails):
+		from utility.utilities import validateEmail, generateUniqueId
+		from models.models import TemporaryBooking
+		isRequiredInMorning = False
+		isRequiredInEvening = False
+		if(cookBookingDetails.get('isRequiredInMorning') == 'yes'):
+			 isRequiredInMorning = True
+		if(cookBookingDetails.get('isRequiredInEvening') == 'yes'):
+			isRequiredInEvening = True
+		bookACook = TemporaryBooking(str(generateUniqueId()), cookBookingDetails.get('customerName')
+			, cookBookingDetails.get('customerLocation'), cookBookingDetails.get('customerPhone')
+			, cookBookingDetails.get('customerEmail'), cookBookingDetails.get('customerPreference')
+			, isRequiredInMorning, isRequiredInEvening
+			, cookBookingDetails.get('numberOfMembers'))
+
+		return self.dbConnection.bookACook(bookACook)		
+
+
 
 
 

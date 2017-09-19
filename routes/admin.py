@@ -55,11 +55,14 @@ def addCookBasicDetails():
 		return jsonify(AdminController().addCookDetails(cookBasicData))
 
 
-# @admin.route('/cookdetails', methods=['GET'])
-# def getCookDetails():
-# 		queryParams = request.args
-# 		queryKeyList = queryParams.keys()
-# 		for keys in queryKeyList:
-			
+#Get cook details
+@admin.route('/cookdetails', methods=['GET'])
+def getCookDetails():
+	queryParams = request.args
+	from controllers.controllers import AdminController
+	return jsonify(AdminController().getCookDetails(queryParams))
+
+
+
 
 
