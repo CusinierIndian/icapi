@@ -227,11 +227,13 @@ label{
 
 }
 .conter-span-days{
-	margin:10px 0px;
+
+ margin:0px 0px 20px 0px;
+
 }
 
 .conter-span-days >div{
-	min-width: 80px;
+	max-width: 80px;
     padding: 3px 10px;
     font-size: 20px;
     background: rgba(255, 255, 255, 0.48);
@@ -268,6 +270,7 @@ label{
 #map{
 	height:400px;
 	width:100%;
+	margin-top: 10px;
 }
 .service-card{
 	margin:15px;
@@ -315,26 +318,6 @@ label{
 	width: 100%;
 	margin: 10px 0px;
 }
-.subscribe-icon{
-	font-size:70px;
-	color:green;
-
-}
-.modal-close-icon{
-	font-size:2rem;
-}
-.subs-header{
-	font-size: 2rem;
-	text-align:center;
-}
-.subs-text{
-	font-size: 1.3rem;
-	text-align:center;
-}
-.error_page{
-	height:300px;
-	width:auto;
-}
 
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575px) {
@@ -342,10 +325,10 @@ label{
 		padding:10px;
 	}
 	.conter-span-days >div {
-    	min-width: 65px;
+    	max-width: 65px;
     	padding: 3px 8px;
     	font-size: 16px;
-	}
+ }
 	.conter-span-no >div{
 		min-width: 65px;
 	    padding: 7px 10px;
@@ -357,6 +340,10 @@ label{
 	}
 	.nav-link{
 		color:#000 !important;
+	}
+	.service-heading{
+	margin-top:25px;
+	font-size:25px;
 	}
 	.why-us-heading,.career-heading{
 		font-size:25px;

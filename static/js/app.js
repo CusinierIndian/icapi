@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	console.log("page is loaded");
 
+
+
 	var countDownDate = new Date("Nov 1, 2017 11:46:00").getTime();
 	var x = setInterval(function() {
 
@@ -419,4 +421,8 @@ var contactUs = function(){
         });
     }
 }
+
+  
+
+
 
