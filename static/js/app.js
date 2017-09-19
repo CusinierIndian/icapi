@@ -305,12 +305,15 @@ var subscribe_user = function(){
             crossDomain: true,
             data:JSON.stringify(requestData),
             success: function (data) {
-               if(data.notification.code == 200){
+               if(data.notification.code == 200 || data.notification.code == 'ic_500'){
                     console.log("subscribe successfull")
+                    $('#subscription-modal-success').modal('show');
                }
                else{
                     console.log("subscribe failed")
+                    $('#error-modal').modal('show');
                }
+               $('#subscribe_user_email').val('');
             }
         });
     }
@@ -329,13 +332,9 @@ var applyForCarrer = function(el){
     requestData.phone = $('#apply_phone_no').val();
     requestData.role = $('#apply_designation').val();
     console.log('form data',requestData);
-    if(!requestData.name || !requestData.email || !requestData.phone || !requestData.role){
-        errMsg = 'All fields are required.'
+    if(!requestData.name  || !requestData.phone){
+        errMsg = 'Name and Phone number are required.'
         $('#apply_error').html(errMsg);
-    }
-    else if(!validateEmail(requestData.email)){
-        errMsg = 'Enter valid email adresss.';
-         $('#apply_error').html(errMsg);
     }
     else if(isNaN(requestData.phone)){
         errMsg = 'Enter valid phone Number.';
@@ -351,13 +350,21 @@ var applyForCarrer = function(el){
             crossDomain: true,
             data:JSON.stringify(requestData),
             success: function (data) {
+                $('#apply-modal').modal('hide');
                if(data.notification.code == 200){
-                    console.log("apply successfull")
+                    $('#carrer-modal').modal('show');
                }
+               else{
+                    $('#error-modal').modal('show');
+               }
+                $('#apply_name').val('');
+                $('#apply_email').val('');
+                $('#apply_phone_no').val('');
             },
             error:function(data){
                  if(data.notification.code == 500){
                     console.log("apply failed");
+                    $('#error-modal').modal('show');
                }
             }
         });
@@ -395,7 +402,14 @@ var contactUs = function(){
             success: function (data) {
                if(data.notification.code == 200){
                     console.log("apply successfull")
+                    $('#carrer-modal').modal('show');
                }
+               else{
+                    $('#error-modal').modal('show');
+               }
+                $('#contact_name').val('');
+                $('#contact_email').val('');
+                $('#contact_phone_no').val('');
             },
             error:function(data){
                  if(data.notification.code == 500){
