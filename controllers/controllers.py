@@ -12,13 +12,10 @@ class SubscriptionController(BaseController):
 
 	def subscribe(self, subscribedUser):
 		from utility.utilities import validateEmail, generateUniqueId
-		isEmailValidated = validateEmail(subscribedUser.get('email'))
-		if(isEmailValidated):
-			from models.models import SubscribedUser
-			subscriptionData =  SubscribedUser(str(generateUniqueId()), subscribedUser.get('email'), True)
-			return DBOperations().susbscribe(subscriptionData)
-		else:
-			return ExceptionTransformers().transformExceptionSubcribedUser(Constants.INVALID_INPUT, Constants.INVALID_EMAIL, Constants.STATUS_FAILED)
+		from models.models import SubscribedUser
+		subscriptionData =  SubscribedUser(str(generateUniqueId()), subscribedUser.get('email'), True)
+		return DBOperations().susbscribe(subscriptionData)
+	
 
 
 #Admin Controller
@@ -89,14 +86,12 @@ class ContactUsController(BaseController):
 
 	def insertContactUsDetails(self, contactUsDetails):
 		from utility.utilities import validateEmail, validatePhoneNumber, generateUniqueId
-		isEmailValidated = validateEmail(contactUsDetails.get('email'))
+		# isEmailValidated = validateEmail(contactUsDetails.get('email'))
 		# isPhoneValidated = validatePhoneNumber(contactUsDetails.get('phone'))
-		if isEmailValidated:
-			from models.models import ContactUs
-			contactUsModel = ContactUs(str(generateUniqueId()), contactUsDetails.get('name'), contactUsDetails.get('email'), contactUsDetails.get('phone'))
-			return self.dbConnection.insertContactUsDetails(contactUsModel)
-		else:
-			return ExceptionTransformers().transformExceptionContactUs(Constants.INVALID_INPUT, Constants.INVALID_EMAIL, Constants.STATUS_FAILED)
+		from models.models import ContactUs
+		contactUsModel = ContactUs(str(generateUniqueId()), contactUsDetails.get('name'), contactUsDetails.get('email'), contactUsDetails.get('phone'))
+		return self.dbConnection.insertContactUsDetails(contactUsModel)
+	
 
 
 #Temporary controller for booking a cook
