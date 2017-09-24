@@ -51,7 +51,7 @@ class Transformers:
 				'bookingId' : model.id,
 				'customerName' : model.customerName,
 				'customerLocation' : model.customerLocation,
-				'customerPhone' : model.customerLocation,
+				'customerPhone' : model.customerPhone,
 				'customerEmail' : model.customerEmail,
 				'customerPreference' : model.customerPreference,
 				'isRequiredInMorning' : model.isRequiredInMorning,
