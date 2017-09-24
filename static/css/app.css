@@ -92,7 +92,7 @@ a.nav-link:hover {
 }
 .service-content{
 	padding:25px;
-	background-color:rgba(169, 169, 169, 0.12);
+	border-top:1px solid #dcdcdc;
 }
 .row{
 	margin:0px;
@@ -275,7 +275,7 @@ label{
 .service-card{
 	margin:15px;
 	position: relative;
-	height:500px;
+	height:400px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -288,10 +288,11 @@ label{
     border-radius: .25rem;
 }
 .service-card > .service-card-img-top{
-	height:300px;
+	height:280px;
 }
 .service-card > .service-card-block{
 	padding:10px;
+	width:100%;
 	overflow: hidden;
     -webkit-transition: all 0.5s linear;
     -moz-transition: all 0.5s linear;
@@ -308,36 +309,55 @@ label{
 }
 .service-card:hover >.service-card-block{
 	position: absolute;
-    height: 430px;
+    height: 350px;
     background-color: #fff;
     border-right: 4px solid #18a2b8;
-
-}	
+}
+.service-card-title{
+	color:#31aab9;
+}
+.service-card-text{
+	display:none;
+	text-align: justify;
+    -moz-text-align-last: left; /* Code for Firefox */
+    text-align-last: left;
+}
 #apply_error,#contact_error{
 	color:red;
 	width: 100%;
 	margin: 10px 0px;
 }
 .subscribe-icon{		
-		font-size:70px;		
-		color:green;		
-			
-	}		
-	.modal-close-icon{		
-		font-size:2rem;		
-	}		
-	.subs-header{		
-		font-size: 2rem;		
-		text-align:center;		
-	}		
-	.subs-text{		
-		font-size: 1.3rem;		
-		text-align:center;		
-	}		
-	.error_page{		
-		height:300px;		
-		width:auto;		
-	}
+	font-size:70px;		
+	color:green;		
+		
+}		
+.modal-close-icon{		
+	font-size:2rem;		
+}		
+.subs-header{		
+	font-size: 2rem;		
+	text-align:center;		
+}		
+.subs-text{		
+	font-size: 1.3rem;		
+	text-align:center;		
+}		
+.error_page{		
+	height:300px;		
+	width:auto;		
+}
+.people-input{
+	padding: 0px 0px 0px 10px;
+}
+.padding-top-15{
+	padding:15px 0px;
+}
+#service_error{
+	padding:10px 0px;
+	color:red;
+	font-weight: 700;
+}
 
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575px) {
@@ -377,6 +397,10 @@ label{
 	.transparent-navbar a.nav-link{
 		color:#000 !important;
 	}
+	.people-input{
+		padding:0px;
+		margin:10px 0px;
+	}
 }
 
  /*Small devices (landscape phones, 576px and up)*/
@@ -389,6 +413,10 @@ label{
 	}
 	.transparent-navbar a.nav-link{
 		color:#000 !important;
+	}
+	.people-input{
+		padding:0px;
+		margin:10px 0px;
 	}
 
 }

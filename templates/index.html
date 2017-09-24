@@ -129,39 +129,27 @@
                 </div>
                 <div class="row justify-content-md-center">
                     <!-- <div class="col-md-auto col-lg-auto col-xl-3"></div> -->
-                    <div class="no-padding width-lg col-md-4 col-lg-3 col-xl-2 col-sm-12 col-xs-12">
+                    <div class="no-padding width-lg col-md-4 col-lg-4 col-xl-3 col-sm-12 col-xs-12">
                         <div class="service-card">
-                            <img class="service-card-img-top" src="images/cooking.jpg" alt="Card image cap">
+                            <img class="service-card-img-top" src="static/images/service1.jpg" alt="Card image cap">
                             <div class="service-card-block animated">
-                                <h4 class="service-card-title">Card title</h4>
-                                <p class="service-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h4 class="service-card-title">Household Cooking</h4>
+                                <p class="service-card-text">If you are too tired to cook your meal because of your hectic work schedule and busy life,you need not worry anymore. We provide the best cook for spicing up your daily meal just as you like it.We completly understand the importance of a healthy diet with adequate oil and spice that adds up to your taste.</p>
                             </div>
                             <div class="service-card-footer">
-                                <button class="btn btn-info">Book Now</button>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#service-modal">Book Now</button>
                             </div>
                         </div>
                     </div>
-                    <div class="no-padding  width-lg col-md-4 col-lg-3 col-xl-2 col-sm-12 col-xs-12">
+                    <div class="no-padding  width-lg col-md-4 col-lg-4 col-xl-3 col-sm-12 col-xs-12">
                         <div class="service-card">
-                            <img class="service-card-img-top" src="static/images/cooking.jpg" alt="Card image cap">
+                            <img class="service-card-img-top" src="static/images/service2.jpg" alt="Card image cap">
                             <div class="service-card-block animated">
-                                <h4 class="service-card-title">Card title</h4>
-                                <p class="service-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h4 class="service-card-title">Occasions</h4>
+                                <p class="service-card-text">Whether it's a birthday an anniversary, a special occasion or a bereavement ceremony, we provide cooks for the days you need. Also you don't need to order special food items form outside, our cook are proficient in cooking sevral delicacies food inside your kitchen.</p>
                             </div>
                             <div class="service-card-footer">
-                                <button class="btn btn-info">Book Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="no-padding  width-lg col-md-4 col-lg-3 col-xl-2 col-sm-12 col-xs-12">
-                        <div class="service-card">
-                            <img class="service-card-img-top" src="images/cooking.jpg" alt="Card image cap">
-                            <div class="service-card-block animated">
-                                <h4 class="service-card-title">Card title</h4>
-                                <p class="service-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="service-card-footer">
-                                <button class="btn btn-info">Book Now</button>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#service-modal">Book Now</button>
                             </div>
                         </div>
                     </div>
@@ -282,6 +270,78 @@
                 </div>
             </div>
         </div>
+        <!-- Modal for servce in Indian Cuisinier -->
+        <div class="modal fade" id="service-modal" tabindex="-1" role="dialog" aria-labelledby="service-modal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Services Provided by Indian Cuisiner</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                            <div class="form-group">
+                                <label for="service_location" class="form-control-label">Location</label>
+                                <select class="form-control" id="service_location">
+                                    <option value="gachibowli" selected>Gachibowli</option>
+                                    <option value="kondapur">Kondapur</option>
+                                    <option value="Madapur">Madapur</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="service_name" class="form-control-label">Name:</label>
+                                <input class="form-control form-control-input" type="text" id="service_name" placeholder="Name" required="true" />
+                            </div>
+                            <div class="form-group">
+                                <label for="service_email" class="form-control-label">Email:</label>
+                                <input class="form-control form-control-input" type="email" id="service_email" placeholder="abc@gmail.com"  required="true" />  
+                                <small id="serviceEmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="service_phone_no" class="form-control-label">Phone No:</label>
+                                <input class="form-control form-control-input" type="text" id="service_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+                                    <label for="customer_prefrences" class="form-control-label">Customer Prefrences</label>
+                                    <select class="form-control" id="customer_prefrences">
+                                        <option value="North Indian" selected>North Indian</option>
+                                        <option value="South Indian">South Indian</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+                                    <label for="no_of_people" class="form-control-label">No of People</label>
+                                    <input class="form-control form-control-input" type="number" id="no_of_people" required="true" />
+                                </div>
+                            </div>
+                            <!-- <div class="form-group row padding-top-15">
+                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 no-padding">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInBothTime" value="true" checked> Required in both time
+                                  </label>
+                                </div>
+                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 people-input">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInMorning" value="false"> Required in Morning
+                                  </label>
+                                </div>
+                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 people-input">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInEvening" value="false"> Required in Evening
+                                  </label>
+                                </div>
+                            </div> -->
+                            <div id="service_error"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <div id="apply_error" class="pull-left"></div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info" onclick="applyForService(this)">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- After subscription Modal PopUp-->
         <div class="modal fade" id="subscription-modal-success" tabindex="-1" role="dialog" aria-labelledby="apply-modal" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -355,7 +415,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script type="text/javascript" src="/static/js/app.js"></script>
-            <script src="/static/js/jquery.inputfit.js"></script>
+        <script src="/static/js/jquery.inputfit.js"></script>
 
 
 

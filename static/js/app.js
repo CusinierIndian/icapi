@@ -59,7 +59,11 @@ $(document).ready(function(){
     	} // End if
 	});
 
-
+    $('.service-card').hover(function(){
+        $(this).find('.service-card-text').css('display','block');
+    },function(){
+        $(this).find('.service-card-text').css('display','none');
+    })
 	//color change based on user input for contact us form 
 	
 
@@ -338,7 +342,11 @@ var applyForCarrer = function(el){
         errMsg = 'Name and Phone number are required.'
         $('#apply_error').html(errMsg);
     }
-    else if(isNaN(requestData.phone)){
+    else if(isNaN(requestData.phone) || requestData.phone.length != 10){
+        errMsg = 'Enter valid phone Number.';
+         $('#apply_error').html(errMsg);
+    }
+    else if(requestData.email && !validateEmail(requestData.email)){
         errMsg = 'Enter valid phone Number.';
          $('#apply_error').html(errMsg);
     }
@@ -388,7 +396,7 @@ var contactUs = function(){
         errMsg = 'Enter valid email adresss.';
          $('#contact_error').html(errMsg);
     }
-    else if(isNaN(requestData.phone)){
+    else if(isNaN(requestData.phone) || requestData.phone.length != 10){
         errMsg = 'Enter valid phone Number.';
          $('#contact_error').html(errMsg);
     }
@@ -412,14 +420,63 @@ var contactUs = function(){
                 $('#contact_name').val('');
                 $('#contact_email').val('');
                 $('#contact_phone_no').val('');
-            },
-            error:function(data){
-                 if(data.notification.code == 500){
-                    console.log("apply failed");
-               }
             }
         });
     }
+}
+var applyForService = function(el){
+    console.log("apply for service",el);
+    $('#service_error').html('');
+     var requestData = {},errMsg = '';
+    requestData.customerName = $('#service_name').val();
+    requestData.customerEmail = $('#service_email').val();
+    requestData.customerPhone = $('#service_phone_no').val();
+    requestData.customerLocation = $('#service_location').val();
+    requestData.customerPreference = $('#customer_prefrences').val();
+    requestData.numberOfMembers = $('#no_of_people').val();
+    console.log("form data",requestData);
+    if(!requestData.customerName || !requestData.customerEmail || !requestData.customerPhone || !requestData.numberOfMembers){
+        errMsg = 'All fields are required.';
+        $('#service_error').html(errMsg);
+    }
+    else if(isNaN(requestData.customerPhone) || requestData.customerPhone.length != 10){
+        errMsg = 'Enter valid phone Number.';
+        $('#service_error').html(errMsg);
+    }
+    else if(!validateEmail(requestData.customerEmail)){
+        errMsg = 'Enter valid Email Id.';
+        $('#service_error').html(errMsg);
+    }
+    else if( requestData.numberOfMembers < 1){
+        errMsg = 'Enter valid No of people';
+        $('#service_error').html(errMsg);
+    }
+    else{
+        $.ajax({
+            url: 'http://127.0.0.1:5000/ic/cookbooking',
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            datatype:'json',
+            crossDomain: true,
+            data:JSON.stringify(requestData),
+            success: function (data) {
+                $('#service-modal').modal('hide');
+               if(data.notification.code == 200){
+                    console.log("apply successfull")
+                    $('#carrer-modal').modal('show');
+               }
+               else{
+                    $('#error-modal').modal('show');
+               }
+                $('#service_name').val('');
+                $('#service_email').val('');
+                $('#service_phone_no').val('');
+                $('#service_location').val('');
+                $('#customer_prefrences').val('');
+                $('#no_of_people').val('');
+            }
+        });
+    }    
 }
 
   
