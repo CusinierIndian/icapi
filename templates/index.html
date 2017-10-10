@@ -188,7 +188,7 @@
                             <div class="form-group">
                                 <label for="contactName">Name</label>
                                 <input type="text" class="form-control form-control-input" id="contact_name" placeholder="Enter name" />
-                                <small class="form-control-feedback-warning">Name field cannot
+                                <small id="cformName" class="form-control-feedback-warning">Name field cannot
                                     be empty!</small>
                             </div>
                             <div class="form-group">
@@ -200,7 +200,7 @@
                             <div class="form-group">
                                 <label for="contactPhone">Phone</label>
                                 <input type="text" class="form-control form-control-input" id="contact_phone_no" placeholder="Enter phone number.."> <small id="cformPhone" class="form-control-feedback-warning">Minimum
-                                    10 characters is required</small>
+                                    10 digit is required</small>
                             </div>
                             <div id="contact_error"></div>
                             <button type="button" id="btnContact" class="btn btn-primary" onclick="contactUs()">Submit</button>
@@ -281,37 +281,80 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                            <div class="form-group">
-                                <label for="service_location" class="form-control-label">Location</label>
+                                <div class="form-group row">
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+                                <label for="service_name" class="form-control-label">Name:</label>
+                                <input class="form-control form-control-input" type="text" id="service_name" placeholder="Name" required="true" />
+                            </div>
+                            
+                            
+                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+                                <label for="service_phone_no" class="form-control-label">Phone No:</label>
+                                <input class="form-control form-control-input" type="text" id="service_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
+                            </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+                                <label for="service_pincode" class="form-control-label">Pincode:</label>
+                                <input class="form-control form-control-input" type="text" id="service_pincode" placeholder="Pincode" required="true" />
+                            </div>
+
+                            
+                            
+                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+                                <label for="service_location" class="form-control-label">Locality:</label>
                                 <select class="form-control" id="service_location">
                                     <option value="gachibowli" selected>Gachibowli</option>
                                     <option value="kondapur">Kondapur</option>
                                     <option value="Madapur">Madapur</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="service_name" class="form-control-label">Name:</label>
-                                <input class="form-control form-control-input" type="text" id="service_name" placeholder="Name" required="true" />
+                            </div>
+                                  <div class="form-group row">
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+                                <label for="service_city" class="form-control-label">City:</label>
+                                <input class="form-control form-control-input" type="text" id="service_city" placeholder="City" required="true" />
+                            </div>
+                            
+                            
+                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+                                <label for="service_state" class="form-control-label">State:</label>
+                                <input class="form-control form-control-input" type="text" id="service_state" maxlength="10" placeholder="State"  required="true" />
+                            </div>
+                            </div>
+                            <div class="form-group row">
+                            <label for="service_address">Address(Area and Street):</label>
+                            <textarea class="form-control" id="service_address"></textarea>
+                            </div>
+                               <div class="form-group row">
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+                                <label for="service_landmark" class="form-control-label">Landmark(Optional):</label>
+                                <input class="form-control form-control-input" type="text" id="service_landmark" placeholder="Landmark" required="true" />
+                            </div>
+                            
+                            
+                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+                                <label for="service_alternate_phone_no" class="form-control-label">Alternate Phone No(Optional):</label>
+                                <input class="form-control form-control-input" type="text" id="service_alternate_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
+                            </div>
                             </div>
                             <div class="form-group">
+                                
                                 <label for="service_email" class="form-control-label">Email:</label>
                                 <input class="form-control form-control-input" type="email" id="service_email" placeholder="abc@gmail.com"  required="true" />  
                                 <small id="serviceEmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="service_phone_no" class="form-control-label">Phone No:</label>
-                                <input class="form-control form-control-input" type="text" id="service_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
-                            </div>
+                            
+                           </div>
                             <div class="form-group row">
                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
-                                    <label for="customer_prefrences" class="form-control-label">Customer Prefrences</label>
+                                    <label for="customer_prefrences" class="form-control-label">Customer Prefrences:</label>
                                     <select class="form-control" id="customer_prefrences">
                                         <option value="North Indian" selected>North Indian</option>
                                         <option value="South Indian">South Indian</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
-                                    <label for="no_of_people" class="form-control-label">No of People</label>
+                                    <label for="no_of_people" class="form-control-label">No of People:</label>
                                     <input class="form-control form-control-input" type="number" id="no_of_people" required="true" />
                                 </div>
                             </div>
