@@ -4,29 +4,29 @@ $(document).ready(function () {
 
     console.log("page is loaded");
 
- 
 
- 
 
- 
+
+
+
 
     var countDownDate = new Date("Nov 1, 2017 11:46:00").getTime();
 
     var x = setInterval(function () {
 
- 
+
 
         // Get todays date and time
 
         var now = new Date().getTime();
 
- 
+
 
         // Find the distance between now an the count down date
 
         var distance = countDownDate - now;
 
- 
+
 
         // Time calculations for days, hours, minutes and seconds
 
@@ -38,13 +38,13 @@ $(document).ready(function () {
 
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
- 
+
 
         // Output the result in an element with id="demo"
 
         document.getElementById("tiles").innerHTML = "<div>" + days + "</div><div>" + hours + "</div><div>" + minutes + "</div><div>" + seconds + "</div>";
 
- 
+
 
         // If the count down is over, write some text
 
@@ -58,9 +58,9 @@ $(document).ready(function () {
 
     }, 1000);
 
- 
 
- 
+
+
 
     // for closing nav-bar link after click
 
@@ -68,17 +68,17 @@ $(document).ready(function () {
 
         $('.navbar-collapse').collapse('hide');
 
- 
+
 
     });
 
- 
+
 
     // for smooth scrolling
 
     $("a").on('click', function (event) {
 
- 
+
 
         // Make sure this.hash has a value before overriding default behavior
 
@@ -88,7 +88,7 @@ $(document).ready(function () {
 
             event.preventDefault();
 
- 
+
 
             // Store hash
 
@@ -98,7 +98,7 @@ $(document).ready(function () {
 
             console.log("position", position);
 
- 
+
 
             // Using jQuery's animate() method to add smooth page scroll
 
@@ -120,7 +120,7 @@ $(document).ready(function () {
 
     });
 
- 
+
 
     $('.service-card').hover(function () {
 
@@ -134,53 +134,53 @@ $(document).ready(function () {
 
     //color change based on user input for contact us form
 
- 
 
- 
+
+
 
     //color change based on user input for contact us form
 
- 
 
- 
 
- 
+
+
+
 
     var contactNamePattern = /^([a-zA-Z]){2,30}$/;
 
- 
+
 
     var msg;
 
- 
+
 
     $('#contact_name').keyup(function () {
 
- 
+
 
         var data = $(this).val();
 
- 
+
 
         console.log(data);
 
- 
+
 
         if (data.match(contactNamePattern)) {
 
- 
 
- 
 
- 
+
+
+
 
             $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
- 
 
- 
 
- 
+
+
+
 
         }
 
@@ -192,143 +192,143 @@ $(document).ready(function () {
 
         }
 
- 
 
- 
+
+
 
         else {
 
- 
+
 
             $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
             msg = "Enter characters only";
 
- 
 
- 
 
- 
+
+
+
 
         }
 
- 
 
- 
+
+
 
         document.getElementById("cformName").innerHTML = msg;
 
- 
+
 
     });
 
- 
 
- 
 
- 
+
+
+
 
     var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
- 
+
 
     $('#contact_email').keyup(function (e) {
 
- 
+
 
         var data = $('#contact_email').val().trim();
 
- 
+
 
         console.log(data);
 
- 
+
 
         if (data.match(pattern)) {
 
- 
+
 
             $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
- 
+
 
         }
 
- 
+
 
         else {
 
- 
+
 
             $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
- 
+
 
         }
 
- 
+
 
     });
 
- 
 
- 
+
+
 
     var text;
 
- 
+
 
     $('#contact_phone_no').keyup(function (e) {
 
- 
+
 
         var data = $('#contact_phone_no').val().trim();
 
- 
+
 
         console.log(data);
 
- 
+
 
         if ((isNaN(data))) {
 
- 
+
 
             $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
- 
+
 
             text = "Enter number only";
 
- 
+
 
         }
 
- 
+
 
         else {
 
- 
+
 
             $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
- 
 
- 
 
- 
+
+
+
 
         }
 
- 
+
 
         document.getElementById("cformPhone").innerHTML = text;
 
- 
+
 
     });
 
- 
+
 
     // changing of absolute to fixed nav bar
 
@@ -336,7 +336,7 @@ $(document).ready(function () {
 
         var height = $(window).scrollTop();
 
- 
+
 
         if (height > 90) {
 
@@ -356,25 +356,25 @@ $(document).ready(function () {
 
     });
 
- 
+
 
     // window.addEventListener("hashchange", function() { scrollBy(10, -50) })
 
 })
 
- 
 
- 
 
- 
+
+
+
 
 //validation for modal
 
- 
 
- 
 
- 
+
+
+
 
 var domainPort = '127.0.0.1:8000';
 
@@ -382,36 +382,22 @@ var charPattern = /^[a-zA-Z]+$/;
 
 var text;
 
- 
+
 
 $('#apply_name').keyup(function () {
 
- 
+
 
     var data = $(this).val();
 
- 
+
 
     console.log(data);
 
- 
+
 
     if (data.match(charPattern)) {
-
- 
-
- 
-
- 
-
         $(this).parent('div').removeClass('has-warning').addClass('has-success');
-
- 
-
- 
-
- 
-
     }
 
     else if (data == "") {
@@ -422,375 +408,356 @@ $('#apply_name').keyup(function () {
 
     }
 
- 
-
- 
-
     else {
-
- 
 
         $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
         text = "Enter characters only";
-
- 
-
- 
-
- 
-
     }
-
- 
-
- 
-
     document.getElementById("apply_nm").innerHTML = text;
-
- 
-
 });
 
- 
 
- 
+
+
 
 var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
- 
-
 $('#apply_email').keyup(function (e) {
-
- 
-
     var data = $('#apply_email').val().trim();
-
- 
-
     console.log(data);
-
- 
-
     if (data.match(pattern)) {
 
- 
-
-        $(this).parent('div').removeClass('has-warning').addClass('has-success');
-
- 
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
     }
-
- 
 
     else {
-
- 
-
         $(this).parent('div').removeClass('has-success').addClass('has-warning');
-
- 
-
     }
-
- 
-
 });
 
- 
 
- 
 
- 
+
+
+
 
 var text;
-
- 
-
 $('#apply_phone_no').keyup(function (e) {
-
- 
-
-    var data = $('#apply_phone_no').val().trim();
-
- 
-
-    console.log(data);
-
- 
-
- 
-
- 
-
-    if ((isNaN(data))) {
-
- 
-
+  var data = $('#apply_phone_no').val().trim();
+  console.log(data);
+if ((isNaN(data))) {
         $(this).parent('div').removeClass('has-success').addClass('has-warning');
-
- 
-
         text = "Enter number only";
-
- 
-
     }
-
- 
-
- 
 
     else {
-
- 
-
         $(this).parent('div').removeClass('has-warning').addClass('has-success');
-
- 
-
- 
-
- 
 
     }
 
- 
+
 
     document.getElementById("phnum").innerHTML = text;
 
- 
+
 
 });
 
- 
 
- 
 
- 
+
+
+
 
 //subscription email
 
- 
 
- 
 
- 
+
+
+
 
 var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
- 
 
- 
 
- 
+
+
+
 
 $('#sub-email').keyup(function (e) {
 
- 
+
 
     var data = $('#sub-email').val().trim();
 
- 
+
 
     console.log(data);
 
- 
+
 
     if (data.match(pattern)) {
 
- 
+
 
         $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
- 
+
 
     }
 
- 
+
 
     else {
 
- 
+
 
         $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
- 
+
 
     }
 
- 
+
 
 });
 
- 
 
- 
 
- 
 
- 
 
-  var serviceNamePattern = /^([a-zA-Z]){2,30}$/;
 
- 
 
-    var msg;
 
- 
 
-    $('#service_name').keyup(function () {
+var serviceNamePattern = /^([a-zA-Z]){2,30}$/;
 
- 
 
-        var data = $(this).val();
 
- 
+var msg;
 
-        console.log(data);
 
- 
 
-        if (data.match(serviceNamePattern)) {
+$('#service_name').keyup(function () {
 
-            $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
-        }
 
-        else if (data == "") {
+    var data = $(this).val();
 
-            $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
-            msg = "Name field cannot be empty";
 
-        }
+    console.log(data);
 
-        else {
 
- 
 
-            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+    if (data.match(serviceNamePattern)) {
 
-            msg = "Enter characters only";
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
-        }
+    }
 
-        document.getElementById("service_nm").innerHTML = msg;
+    else if (data == "") {
 
- 
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
-    });
+        msg = "Name field cannot be empty";
 
- 
+    }
 
- 
+    else {
 
- 
 
-    var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
- 
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
-    $('#service_email').keyup(function (e) {
+        msg = "Enter characters only";
 
- 
+    }
 
-        var data = $('#service_email').val().trim();
+    document.getElementById("service_nm").innerHTML = msg;
 
- 
 
-        console.log(data);
 
- 
+});
 
-        if (data.match(pattern)) {
 
- 
 
-            $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
- 
 
-        }
 
- 
 
-        else {
+var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
- 
 
-            $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
- 
+$('#service_email').keyup(function (e) {
 
-        }
 
- 
 
-    });
+    var data = $('#service_email').val().trim();
 
- 
 
- 
 
-    var text;
+    console.log(data);
 
- 
 
-    $('#service_phone_no').keyup(function (e) {
 
- 
+    if (data.match(pattern)) {
 
-        var data = $('#service_phone_no').val().trim();
 
- 
 
-        console.log(data);
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
- 
 
-        if ((isNaN(data))) {
 
- 
+    }
 
-            $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
- 
 
-            text = "Enter number only";
+    else {
 
- 
 
-        }
 
- 
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
-        else {
 
- 
 
-            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+    }
 
-        }
 
- 
 
-        document.getElementById("service_phone").innerHTML = text;
+});
 
- 
 
-    });
 
- 
 
- 
 
- 
+var text;
+
+$('#service_phone_no').keyup(function (e) {
+
+
+
+    var data = $('#service_phone_no').val().trim();
+
+
+
+    console.log(data);
+
+
+
+    if ((isNaN(data))) {
+
+
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+
+
+        text = "Enter number only";
+
+
+
+    }
+
+
+
+    else {
+
+
+
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+
+
+
+    document.getElementById("service_phone").innerHTML = text;
+
+
+
+});
+
+var text;
+
+$('#service_alternate_phone_no').keyup(function (e) {
+
+
+
+    var data = $('#service_alternate_phone_no').val().trim();
+
+
+
+    console.log(data);
+
+
+
+    if ((isNaN(data))) {
+
+
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+
+
+        text = "Enter number only";
+
+
+
+    }
+
+
+
+    else {
+
+
+
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+
+
+
+    document.getElementById("service_alternate_phone").innerHTML = text;
+
+
+
+});
+
+
+
+
+$('#service_address').keyup(function () {
+
+
+
+    var data = $(this).val();
+
+
+
+    console.log(data);
+
+    if (data == "") {
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+
+
+    }
+
+
+});
+
+
+
+
 
 var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
- 
+
 
 var validateEmail = function (data) {
 
@@ -800,7 +767,7 @@ var validateEmail = function (data) {
 
 }
 
- 
+
 
 var subscribe_user = function () {
 
@@ -864,7 +831,7 @@ var subscribe_user = function () {
 
 }
 
- 
+
 
 var applyForCarrer = function (el) {
 
@@ -964,11 +931,11 @@ var applyForCarrer = function (el) {
 
         });
 
-   }
+    }
 
 }
 
- 
+
 
 var contactUs = function () {
 
@@ -986,9 +953,9 @@ var contactUs = function () {
 
     //console.log(!requestData.name);
 
- 
 
- 
+
+
 
     if (!requestData.name && !requestData.email && !requestData.phone) {
 
@@ -998,7 +965,7 @@ var contactUs = function () {
 
     }
 
- 
+
 
     else if (!validateEmail(requestData.email)) {
 
@@ -1039,7 +1006,6 @@ var contactUs = function () {
                 if (data.notification.code == 200) {
 
                     console.log("apply successfull")
-
                     $('#carrer-modal').modal('show');
 
                 }
@@ -1051,9 +1017,7 @@ var contactUs = function () {
                 }
 
                 $('#contact_name').val('');
-
                 $('#contact_email').val('');
-
                 $('#contact_phone_no').val('');
 
             }
@@ -1073,32 +1037,20 @@ var applyForService = function (el) {
     var requestData = {}, errMsg = '';
 
     requestData.customerName = $('#service_name').val();
-
     requestData.customerEmail = $('#service_email').val();
-
     requestData.customerPhone = $('#service_phone_no').val();
-
     requestData.customerPincode = $('#service_pincode').val();
-
     requestData.customerLocation = $('#service_location').val();
-
     requestData.customerCity = $('#service_city').val();
-
     requestData.customerState = $('#service_state').val();
-
     requestData.customerAddress = $('#service_address').val();
-
     requestData.customerLandmark = $('#service_landmark').val();
-
-                requestData.customerLandmark = $('#service_alternate_phone_no').val();
-
+    requestData.customerLandmark = $('#service_alternate_phone_no').val();
     requestData.customerPreference = $('#customer_prefrences').val();
-
     requestData.numberOfMembers = $('#no_of_people').val();
-
     console.log("form data", requestData);
 
-    if (!requestData.customerName && !requestData.customerEmail && !requestData.customerPhone && !requestData.numberOfMembers && !requestData.customerPincode && ! requestData.customerAddress) {
+    if (!requestData.customerName && !requestData.customerEmail && !requestData.customerPhone && !requestData.numberOfMembers && !requestData.customerPincode && !requestData.customerAddress) {
 
         errMsg = 'All fields are required.';
 
@@ -1114,7 +1066,7 @@ var applyForService = function (el) {
 
     }
 
-                else if (requestData.customerPincode != 6) {
+    else if (requestData.customerPincode != 6) {
 
         errMsg = 'Enter valid No of people';
 
@@ -1122,15 +1074,12 @@ var applyForService = function (el) {
 
     }
 
-                else if(requestData.customerAddress =="")
-
-                {
-
-                                errMsg = 'Enter Address';
+    else if (requestData.customerAddress == "") {
+        errMsg = 'Enter Address';
 
         $('#service_error').html(errMsg);
 
-                }
+    }
 
     else if (!validateEmail(requestData.customerEmail)) {
 
@@ -1148,7 +1097,7 @@ var applyForService = function (el) {
 
     }
 
-               
+
 
     else {
 
@@ -1185,17 +1134,15 @@ var applyForService = function (el) {
                 }
 
                 $('#service_name').val('');
-
                 $('#service_email').val('');
-
                 $('#service_phone_no').val('');
-
                 $('#service_location').val('');
-
                 $('#customer_prefrences').val('');
-
                 $('#no_of_people').val('');
-
+                $('#service_address').val('');
+                $('#service_landmark').val('');
+                $('#service_pincode').val('');
+                $('#service_alternate_phone_no').val();
             }
 
         });
