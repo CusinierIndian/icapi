@@ -1,494 +1,1005 @@
+
+
 <!DOCTYPE html>
+
 <html lang="en">
 
+ 
+
 <head>
+
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Indian Cuisinier</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" type="text/css" href="/static/css/app.css">
+
 </head>
 
+ 
+
 <body>
+
     <div class="container-fluid">
+
         <nav class="navbar navbar-expand-lg transparent-navbar navbar-light bg-light animated fadeInDown">
+
             <a class="navbar-brand" href="#home">
+
                 <img src="/static/images/logo320.png" class="brand-logo"/>
+
             </a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
+
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+
                 <ul class="navbar-nav">
+
                     <li class="nav-item active">
+
                         <a class="nav-link" href="#home">Home</a>
+
                     </li>
+
                     <li class="nav-item active">
+
                         <a class="nav-link" href="#why-us">Why us</a>
+
                     </li>
+
                     <li class="nav-item">
+
                         <a class="nav-link" href="#services">Services</a>
+
                     </li>
+
                     <li class="nav-item">
+
                         <a class="nav-link" href="#career">Career</a>
+
                     </li>
+
                     <li class="nav-item">
+
                         <a class="nav-link" href="#contact-us">Contact us</a>
+
                     </li>
+
                 </ul>
+
             </div>
+
         </nav>
+
         <!-- <span class="anchor" id="home"></span> -->
+
         <div id="home" class="home animated fadeInUp">
+
             <div class="home-content img-container">
+
                 <div id="countdown" class="justify-content-center animated fadeInUp">
+
                     <div class="row justify-content-center">
+
                         <h1 class="section-tittle col-12 align-self-center">We are Coming Soon</h1>
+
                     </div>
+
                     <div id="tiles" class="row justify-content-center conter-span-no"></div>
+
                     <div class="row justify-content-center conter-span-days">
+
                         <div>Days</div>
+
                         <div>Hours</div>
+
                         <div>Mins</div>
+
                         <div>Secs</div>
+
                     </div>
+
                     <div class="row justify-content-md-center">
+
                         <div class="input-group col-lg-4 col-xl-3">
+
                             <input type="email" class="form-control" id="subscribe_user_email" name="email" placeholder="Email" aria-label="email" required="true">
+
                             <span class="input-group-btn">
+
                                 <button class="btn btn-success" type="submit" onclick="subscribe_user()">Subscribe</button>
+
                             </span>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
         <div id="why-us" class="why-us animated fadeInUp">
+
             <div class="why-us-content">
+
                 <div class="row justify-content-center">
+
                     <div class="why-us-heading">Why Indian Cuisinier ??</div>
+
                 </div>
+
                 <div class="row h-100">
+
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+
                         <div class="card h-100">
+
                             <div class="card-body">
+
                                 <div class="card-title">
+
                                     <i class="fa fa-black-tie why-us-logo"></i>
+
                                 </div>
+
                                 <h5 class="card-title">Professional</h5>
+
                                 <p class="card-text">We at Indian Cuisinier prioritise discipline and work with a wide diversity of verified professionals who are highly skilled experts in cooking. We provide trained and well-groomed cooks who can meet expectations of our esteemed customers and can cook a healthy and tasty meal for them.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <i class="fa fa-inr why-us-logo"></i>
-                                </div>
-                                <h5 class="card-title">Economical</h5>
-                                <p class="card-text">Affordable and transparent - are the two keywords that define our economical and pocket friendly prices for the cook services. Indian Cuisinier provides the best services at the minimal rates which are both economical and highly transparent in nature.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <i class="fa fa-thumbs-up why-us-logo"></i>
-                                </div>
-                                <h5 class="card-title">Quality</h5>
-                                <p class="card-text">Indian Cuisinier believes that a healthy life begins with a healthy stomach. We make sure that our cooks serve a healthy meal for you without compromising your taste. Also the neat and groomed appearance of our cooks adds a hygienic ambience to your kitchen.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <i class="fa fa-handshake-o why-us-logo"></i>
-                                </div>
-                                <h5 class="card-title">Trust</h5>
-                                <p class="card-text">Our prime objective is to provide the best cook service to our customers. Hence, we are committed towards catering to the requirements of our customers. In case the appointed cook becomes unavailable, we assure to provide the same calibre work without compromising your taste. We assure our customers of zero absenteeism.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <span class="anchor" id="services"></span> -->
-        <div id="services" class="service animated fadeInUp">
-            <div class="service-content">
-                <div class="row justify-content-center">
-                    <div class="service-heading">Services</div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <!-- <div class="col-md-auto col-lg-auto col-xl-3"></div> -->
-                    <div class="no-padding width-lg col-md-4 col-lg-4 col-xl-3 col-sm-12 col-xs-12">
-                        <div class="service-card">
-                            <img class="service-card-img-top" src="static/images/service1.jpg" alt="Card image cap">
-                            <div class="service-card-block animated">
-                                <h4 class="service-card-title">Household Cooking</h4>
-                                <p class="service-card-text">If you are too tired to cook your meal because of your hectic work schedule and busy life,you need not worry anymore. We provide the best cook for spicing up your daily meal just as you like it.We completly understand the importance of a healthy diet with adequate oil and spice that adds up to your taste.</p>
-                            </div>
-                            <div class="service-card-footer">
-                                <button class="btn btn-success" data-toggle="modal" data-target="#service-modal">Book Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="no-padding  width-lg col-md-4 col-lg-4 col-xl-3 col-sm-12 col-xs-12">
-                        <div class="service-card">
-                            <img class="service-card-img-top" src="static/images/service2.jpg" alt="Card image cap">
-                            <div class="service-card-block animated">
-                                <h4 class="service-card-title">Occasions</h4>
-                                <p class="service-card-text">Whether it's a birthday an anniversary, a special occasion or a bereavement ceremony, we provide cooks for the days you need. Also you don't need to order special food items form outside, our cook are proficient in cooking sevral delicacies food inside your kitchen.</p>
-                            </div>
-                            <div class="service-card-footer">
-                                <button class="btn btn-success" data-toggle="modal" data-target="#service-modal">Book Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="col-md-auto col-lg-auto col-xl-3"></div> -->
-                </div>
-            </div>
-        </div>
-        <!-- <span class="anchor" id="career"></span> -->
-        <div id="career" class="career animated fadeInUp">
-            <div class="career-content carrier-img">
-                <div class="row justify-content-center margin-20">
-                    <h4 class="career-heading">Career with Indian Cuisinier</h4>
-                </div>
-                <div class="row margin-20">
-                    <div class="col-lg-4 col-xl-4 col-md-3"></div>
-                    <div class="col-lg-4 col-xl-4 col-md-6 col-xs-12 col-sm-12 career-msg">
-                        <p class="card-text">We and our culture make Indian Cuisinier a platform where leaders burgeon. We're a company of inquisitive pioneers, and we get our energy from our customers’ satisfaction. We measure success against the possible, not the probable, and are capable of embracing ambiguity and uncertainty and we communicate to inspire. We welcome and encourage risk taking innovative ideas and thoughts. We respect every individual and culture, work collaboratively by driving engagement and commitment.
-                        </p>
-                        <p class="center">Come join us and let’s add taste to people’s life.</p>
-                        <div class="row justify-content-center">
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#apply-modal">Apply</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-xl-4 col-md-3 col-xs-12 col-sm-12"></div>
-                </div>
-            </div>
-        </div>
-        <!-- <span class="anchor" id="contact-us"></span> -->
-        <div id="contact-us" class="contact-us animated fadeInUp">
-            <div class="contact-us-content">
-                <div class="row">
-                    <div class="col-xl-2 col-lg-2 col-md-2"></div>
-                    <div class="col-md-4 col-xl-4 col-lg-4 col-sm-12 col-xs-12 contact-us-border">
-                        <div class="service-heading">Contact Us</div>
-                        <form id="cform" name="contact-form">
-                            <div class="form-group">
-                                <label for="contactName">Name</label>
-                                <input type="text" class="form-control form-control-input" id="contact_name" placeholder="Enter name" />
-                                <small id="cformName" class="form-control-feedback-warning">Name field cannot
-                                    be empty!</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactEmail">Email</label>
-                                <input type="email" class="form-control form-control-input" id="contact_email" aria-describedby="emailHelp" placeholder="Enter email">
-                                <small class="form-control-feedback-warning">Enter valid email!</small>
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactPhone">Phone</label>
-                                <input type="text" class="form-control form-control-input" id="contact_phone_no" placeholder="Enter phone number.."> <small id="cformPhone" class="form-control-feedback-warning">Minimum
-                                    10 digit is required</small>
-                            </div>
-                            <div id="contact_error"></div>
-                            <button type="button" id="btnContact" class="btn btn-primary" onclick="contactUs()">Submit</button>
-                        </form>
-                    </div>
-                    <div class="col-md-4 col-xl-4 col-lg-4 col-sm-12 col-xs-12">
-                        <div class="service-heading">Address</div>
-                        <div id="map">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-2">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="row justify-content-center footer-content">
-            <div class="col-12 align-self-center padding-15">
-                <a class="link-page facebook-icon" href="https://www.facebook.com/indiancuisinier" target="blank"><i class="fa fa-facebook"></i></a>
-                <a class="link-page instagram-icon" href="https://www.instagram.com/indiancuisinier/" target="blank"><i class="fa fa-instagram"></i></a>
-                <a class="link-page twitter-icon" href="https://twitter.com/indiancuisinier" target="blank"><i class="fa fa-twitter"></i></a>
-            </div>
-            <div class="col-12 align-self-center">
-                Copyright@ indianCuisinier.com
-            </div>
-        </footer>
-        <!-- Modal for apply in Indian Cuisinier -->
-        <div class="modal fade" id="apply-modal" tabindex="-1" role="dialog" aria-labelledby="apply-modal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Work with
-                            Indian Cuisiner</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                            <div class="form-group">
-                                <label for="designation" class="form-control-label">Designation</label>
-                                <select class="form-control" id="apply_designation" disabled>
-                                    <option value="cook" selected>Cook</option>
-                                    <option value="customer">Customer</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="form-control-label">Name:</label>
-                                <input class="form-control form-control-input" type="text" id="apply_name" placeholder="Name" required="true" /> 
-                                <small id="name" class="form-control-feedback-warning">Name field cannot be empty!</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-control-label">Email:</label>
-                                <input class="form-control form-control-input" type="email" id="apply_email" placeholder="abc@gmail.com"  required="true" /> 
-                                <small class="form-control-feedback-warning">Enter valid email!</small> 
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone-no" class="form-control-label">Phone No:</label>
-                                <input class="form-control form-control-input" type="text" id="apply_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
-                                <small id="phnum" class="form-control-feedback-warning">Minimum 10 number is required</small>
-                            </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div id="apply_error" class="pull-left"></div>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info" onclick="applyForCarrer(this)">Apply</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal for servce in Indian Cuisinier -->
-        <div class="modal fade" id="service-modal" tabindex="-1" role="dialog" aria-labelledby="service-modal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Services Provided by Indian Cuisiner</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                                <div class="form-group row">
-                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
-                                <label for="service_name" class="form-control-label">Name:</label>
-                                <input class="form-control form-control-input" type="text" id="service_name" placeholder="Name" required="true" />
-                            </div>
-                            
-                            
-                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
-                                <label for="service_phone_no" class="form-control-label">Phone No:</label>
-                                <input class="form-control form-control-input" type="text" id="service_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
-                            </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
-                                <label for="service_pincode" class="form-control-label">Pincode:</label>
-                                <input class="form-control form-control-input" type="text" id="service_pincode" placeholder="Pincode" required="true" />
+
                             </div>
 
-                            
-                            
-                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
-                                <label for="service_location" class="form-control-label">Locality:</label>
-                                <select class="form-control" id="service_location">
-                                    <option value="gachibowli" selected>Gachibowli</option>
-                                    <option value="kondapur">Kondapur</option>
-                                    <option value="Madapur">Madapur</option>
-                                </select>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+
+                        <div class="card h-100">
+
+                            <div class="card-body">
+
+                                <div class="card-title">
+
+                                    <i class="fa fa-inr why-us-logo"></i>
+
+                                </div>
+
+                                <h5 class="card-title">Economical</h5>
+
+                                <p class="card-text">Affordable and transparent - are the two keywords that define our economical and pocket friendly prices for the cook services. Indian Cuisinier provides the best services at the minimal rates which are both economical and highly transparent in nature.
+
+                                </p>
+
                             </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+
+                        <div class="card h-100">
+
+                            <div class="card-body">
+
+                                <div class="card-title">
+
+                                    <i class="fa fa-thumbs-up why-us-logo"></i>
+
+                                </div>
+
+                                <h5 class="card-title">Quality</h5>
+
+                                <p class="card-text">Indian Cuisinier believes that a healthy life begins with a healthy stomach. We make sure that our cooks serve a healthy meal for you without compromising your taste. Also the neat and groomed appearance of our cooks adds a hygienic ambience to your kitchen.</p>
+
                             </div>
-                                  <div class="form-group row">
-                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
-                                <label for="service_city" class="form-control-label">City:</label>
-                                <input class="form-control form-control-input" type="text" id="service_city" placeholder="City" required="true" />
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+
+                        <div class="card h-100">
+
+                            <div class="card-body">
+
+                                <div class="card-title">
+
+                                    <i class="fa fa-handshake-o why-us-logo"></i>
+
+                                </div>
+
+                                <h5 class="card-title">Trust</h5>
+
+                               <p class="card-text">Our prime objective is to provide the best cook service to our customers. Hence, we are committed towards catering to the requirements of our customers. In case the appointed cook becomes unavailable, we assure to provide the same calibre work without compromising your taste. We assure our customers of zero absenteeism.
+
+                                </p>
+
                             </div>
-                            
-                            
-                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
-                                <label for="service_state" class="form-control-label">State:</label>
-                                <input class="form-control form-control-input" type="text" id="service_state" maxlength="10" placeholder="State"  required="true" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <span class="anchor" id="services"></span> -->
+
+        <div id="services" class="service animated fadeInUp">
+
+            <div class="service-content">
+
+                <div class="row justify-content-center">
+
+                    <div class="service-heading">Services</div>
+
+                </div>
+
+                <div class="row justify-content-md-center">
+
+                    <!-- <div class="col-md-auto col-lg-auto col-xl-3"></div> -->
+
+                    <div class="no-padding width-lg col-md-4 col-lg-4 col-xl-3 col-sm-12 col-xs-12">
+
+                        <div class="service-card">
+
+                            <img class="service-card-img-top" src="static/images/service1.jpg" alt="Card image cap">
+
+                            <div class="service-card-block animated">
+
+                                <h4 class="service-card-title">Household Cooking</h4>
+
+                                <p class="service-card-text">If you are too tired to cook your meal because of your hectic work schedule and busy life,you need not worry anymore. We provide the best cook for spicing up your daily meal just as you like it.We completly understand the importance of a healthy diet with adequate oil and spice that adds up to your taste.</p>
+
                             </div>
+
+                            <div class="service-card-footer">
+
+                                <button class="btn btn-success" data-toggle="modal" data-target="#service-modal">Book Now</button>
+
                             </div>
-                            <div class="form-group row">
-                            <label for="service_address">Address(Area and Street):</label>
-                            <textarea class="form-control" id="service_address"></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="no-padding  width-lg col-md-4 col-lg-4 col-xl-3 col-sm-12 col-xs-12">
+
+                        <div class="service-card">
+
+                            <img class="service-card-img-top" src="static/images/service2.jpg" alt="Card image cap">
+
+                            <div class="service-card-block animated">
+
+                                <h4 class="service-card-title">Occasions</h4>
+
+                                <p class="service-card-text">Whether it's a birthday an anniversary, a special occasion or a bereavement ceremony, we provide cooks for the days you need. Also you don't need to order special food items form outside, our cook are proficient in cooking sevral delicacies food inside your kitchen.</p>
+
                             </div>
-                               <div class="form-group row">
-                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
-                                <label for="service_landmark" class="form-control-label">Landmark(Optional):</label>
-                                <input class="form-control form-control-input" type="text" id="service_landmark" placeholder="Landmark" required="true" />
+
+                            <div class="service-card-footer">
+
+                                <button class="btn btn-success" data-toggle="modal" data-target="#service-modal">Book Now</button>
+
                             </div>
-                            
-                            
-                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
-                                <label for="service_alternate_phone_no" class="form-control-label">Alternate Phone No(Optional):</label>
-                                <input class="form-control form-control-input" type="text" id="service_alternate_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
-                            </div>
-                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="col-md-auto col-lg-auto col-xl-3"></div> -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <span class="anchor" id="career"></span> -->
+
+        <div id="career" class="career animated fadeInUp">
+
+            <div class="career-content carrier-img">
+
+                <div class="row justify-content-center margin-20">
+
+                    <h4 class="career-heading">Career with Indian Cuisinier</h4>
+
+                </div>
+
+                <div class="row margin-20">
+
+                    <div class="col-lg-4 col-xl-4 col-md-3"></div>
+
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-xs-12 col-sm-12 career-msg">
+
+                        <p class="card-text">We and our culture make Indian Cuisinier a platform where leaders burgeon. We're a company of inquisitive pioneers, and we get our energy from our customers’ satisfaction. We measure success against the possible, not the probable, and are capable of embracing ambiguity and uncertainty and we communicate to inspire. We welcome and encourage risk taking innovative ideas and thoughts. We respect every individual and culture, work collaboratively by driving engagement and commitment.
+
+                        </p>
+
+                        <p class="center">Come join us and let’s add taste to people’s life.</p>
+
+                        <div class="row justify-content-center">
+
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#apply-modal">Apply</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4 col-md-3 col-xs-12 col-sm-12"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <span class="anchor" id="contact-us"></span> -->
+
+        <div id="contact-us" class="contact-us animated fadeInUp">
+
+            <div class="contact-us-content">
+
+                <div class="row">
+
+                    <div class="col-xl-2 col-lg-2 col-md-2"></div>
+
+                    <div class="col-md-4 col-xl-4 col-lg-4 col-sm-12 col-xs-12 contact-us-border">
+
+                        <div class="service-heading">Contact Us</div>
+
+                        <form id="cform" name="contact-form">
+
                             <div class="form-group">
-                                
-                                <label for="service_email" class="form-control-label">Email:</label>
-                                <input class="form-control form-control-input" type="email" id="service_email" placeholder="abc@gmail.com"  required="true" />  
-                                <small id="serviceEmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            
-                           </div>
-                            <div class="form-group row">
-                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
-                                    <label for="customer_prefrences" class="form-control-label">Customer Prefrences:</label>
-                                    <select class="form-control" id="customer_prefrences">
-                                        <option value="North Indian" selected>North Indian</option>
-                                        <option value="South Indian">South Indian</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
-                                    <label for="no_of_people" class="form-control-label">No of People:</label>
-                                    <input class="form-control form-control-input" type="number" id="no_of_people" required="true" />
-                                </div>
+
+                                <label for="contactName">Name</label>
+
+                                <input type="text" class="form-control form-control-input" id="contact_name" placeholder="Enter name" />
+
+                                <small id="cformName" class="form-control-feedback-warning">Name field cannot
+
+                                    be empty!</small>
+
                             </div>
-                            <!-- <div class="form-group row padding-top-15">
-                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 no-padding">
-                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInBothTime" value="true" checked> Required in both time
-                                  </label>
-                                </div>
-                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 people-input">
-                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInMorning" value="false"> Required in Morning
-                                  </label>
-                                </div>
-                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 people-input">
-                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInEvening" value="false"> Required in Evening
-                                  </label>
-                                </div>
-                            </div> -->
-                            <div id="service_error"></div>
+
+                            <div class="form-group">
+
+                                <label for="contactEmail">Email</label>
+
+                                <input type="email" class="form-control form-control-input" id="contact_email" aria-describedby="emailHelp" placeholder="Enter email">
+
+                                <small class="form-control-feedback-warning">Enter valid email!</small>
+
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="contactPhone">Phone</label>
+
+                                <input type="text" class="form-control form-control-input" id="contact_phone_no" placeholder="Enter phone number.."> <small id="cformPhone" class="form-control-feedback-warning">Minimum
+
+                                    10 digit is required</small>
+
+                            </div>
+
+                            <div id="contact_error"></div>
+
+                            <button type="button" id="btnContact" class="btn btn-primary" onclick="contactUs()">Submit</button>
+
+                        </form>
+
                     </div>
+
+                    <div class="col-md-4 col-xl-4 col-lg-4 col-sm-12 col-xs-12">
+
+                        <div class="service-heading">Address</div>
+
+                        <div id="map">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-2">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="row justify-content-center footer-content">
+
+            <div class="col-12 align-self-center padding-15">
+
+                <a class="link-page facebook-icon" href="https://www.facebook.com/indiancuisinier" target="blank"><i class="fa fa-facebook"></i></a>
+
+                <a class="link-page instagram-icon" href="https://www.instagram.com/indiancuisinier/" target="blank"><i class="fa fa-instagram"></i></a>
+
+                <a class="link-page twitter-icon" href="https://twitter.com/indiancuisinier" target="blank"><i class="fa fa-twitter"></i></a>
+
+            </div>
+
+            <div class="col-12 align-self-center">
+
+                Copyright@ indianCuisinier.com
+
+            </div>
+
+        </footer>
+
+        <!-- Modal for apply in Indian Cuisinier -->
+
+        <div class="modal fade" id="apply-modal" tabindex="-1" role="dialog" aria-labelledby="apply-modal" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Work with
+
+                            Indian Cuisiner</h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                            <span aria-hidden="true">&times;</span>
+
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body">
+
+                            <div class="form-group">
+
+                                <label for="designation" class="form-control-label">Designation</label>
+
+                                <select class="form-control" id="apply_designation" disabled>
+
+                                    <option value="cook" selected>Cook</option>
+
+                                    <option value="customer">Customer</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="name" class="form-control-label">Name:</label>
+
+                                <input class="form-control form-control-input" type="text" id="apply_name" placeholder="Name" required="true" />
+
+                                <small id="name" class="form-control-feedback-warning">Name field cannot be empty!</small>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="email" class="form-control-label">Email:</label>
+
+                                <input class="form-control form-control-input" type="email" id="apply_email" placeholder="abc@gmail.com"  required="true" />
+
+                                <small class="form-control-feedback-warning">Enter valid email!</small>
+
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="phone-no" class="form-control-label">Phone No:</label>
+
+                                <input class="form-control form-control-input" type="text" id="apply_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
+
+                                <small id="phnum" class="form-control-feedback-warning">Minimum 10 number is required</small>
+
+                            </div>
+
+                    </div>
+
                     <div class="modal-footer">
+
                         <div id="apply_error" class="pull-left"></div>
+
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        <button type="submit" class="btn btn-info" onclick="applyForCarrer(this)">Apply</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal for service in Indian Cuisinier -->
+
+        <div class="modal fade" id="service-modal" tabindex="-1" role="dialog" aria-labelledby="service-modal" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Services Provided by Indian Cuisiner</h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                            <span aria-hidden="true">&times;</span>
+
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body">
+
+                                <div class="form-group row">
+
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                                <label for="service_name" class="form-control-label">Name:</label>
+
+                                <input class="form-control form-control-input" type="text" id="service_name" placeholder="Name" required="true" />
+
+                                                                                                                                <small id="service_nm" class="form-control-feedback-warning">Name field cannot be empty!</small>
+
+                            </div>
+
+                           
+
+                            
+
+                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                                <label for="service_phone_no" class="form-control-label">Phone No:</label>
+
+                                <input class="form-control form-control-input" type="text" id="service_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
+
+                                                                                                                                <small id="service_phone" class="form-control-feedback-warning">Minimum
+
+                                    10 digit is required</small>
+
+                            </div>
+
+                            </div>
+
+                            <div class="form-group row">
+
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                                <label for="service_pincode" class="form-control-label">Pincode:</label>
+
+                                <input class="form-control form-control-input" type="text" id="service_pincode" placeholder="Pincode" maxlength="6" required="true" />
+
+                                                                                                                                <small id="service_pin" class="form-control-feedback-warning">Minimum
+
+                                    6 digit is required</small>
+
+                            </div>
+
+ 
+
+                           
+
+                            
+
+                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                                <label for="service_location" class="form-control-label">Locality:</label>
+
+                                <select class="form-control" id="service_location">
+
+                                    <option value="gachibowli" selected>Gachibowli</option>
+
+                                    <option value="kondapur">Kondapur</option>
+
+                                    <option value="Madapur">Madapur</option>
+
+                                </select>
+
+                            </div>
+
+                            </div>
+
+                                  <div class="form-group row">
+
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                                <label for="service_city" class="form-control-label">City:</label>
+
+                                <input class="form-control form-control-input" type="text" id="service_city" value="Hyderabad" readonly required="true" />
+
+                            </div>
+
+                           
+
+                            
+
+                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                                <label for="service_state" class="form-control-label">State:</label>
+
+                                <input class="form-control form-control-input" type="text" id="service_state" maxlength="10" value="Telengana"  readonly required="true"></input>
+
+                            </div>
+
+                            </div>
+
+                            <div class="form-group row">
+
+                            <label for="service_address">Address(Area and Street):</label>
+
+                            <textarea class="form-control" id="service_address" required="true"></textarea>
+
+                                                                                                                <small id="service_ad" class="form-control-feedback-warning">
+
+                                Address Field cannot be Empty</small>
+
+                            </div>
+
+                               <div class="form-group row">
+
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                                <label for="service_landmark" class="form-control-label">Landmark(Optional):</label>
+
+                                <input class="form-control form-control-input" type="text" id="service_landmark" placeholder="Landmark" required="true" />
+
+                            </div>
+
+                           
+
+                            
+
+                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                                <label for="service_alternate_phone_no" class="form-control-label">Alternate Phone No(Optional):</label>
+
+                                <input class="form-control form-control-input" type="text" id="service_alternate_phone_no" maxlength="10" placeholder="1234567890"  required="true" />
+
+                            </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                               
+
+                                <label for="service_email" class="form-control-label">Email:</label>
+
+                                <input class="form-control form-control-input" type="email" id="service_email" placeholder="abc@gmail.com"  required="true" /> 
+
+                                                                                                                                <small class="form-control-feedback-warning">Enter valid email!</small>
+
+                                <small id="serviceEmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                            
+
+                           </div>
+
+                            <div class="form-group row">
+
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                                    <label for="customer_prefrences" class="form-control-label">Customer Prefrences:</label>
+
+                                    <select class="form-control" id="customer_prefrences">
+
+                                        <option value="North Indian" selected>North Indian</option>
+
+                                        <option value="South Indian">South Indian</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                                    <label for="no_of_people" class="form-control-label">No of People:</label>
+
+                                    <input class="form-control form-control-input" type="number" id="no_of_people" required="true" />
+
+                                </div>
+
+                            </div>
+
+                            <!-- <div class="form-group row padding-top-15">
+
+                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 no-padding">
+
+                                  <label class="form-check-label">
+
+                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInBothTime" value="true" checked> Required in both time
+
+                                  </label>
+
+                                </div>
+
+                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 people-input">
+
+                                  <label class="form-check-label">
+
+                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInMorning" value="false"> Required in Morning
+
+                                  </label>
+
+                                </div>
+
+                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 people-input">
+
+                                  <label class="form-check-label">
+
+                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInEvening" value="false"> Required in Evening
+
+                                  </label>
+
+                                </div>
+
+                            </div> -->
+
+                            <div id="service_error"></div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <div id="apply_error" class="pull-left"></div>
+
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
                         <button type="submit" class="btn btn-info" onclick="applyForService(this)">Apply</button>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
         <!-- After subscription Modal PopUp-->
+
         <div class="modal fade" id="subscription-modal-success" tabindex="-1" role="dialog" aria-labelledby="apply-modal" aria-hidden="true">
+
             <div class="modal-dialog" role="document">
+
                 <div class="modal-content">
+
                     <div class="modal-body">
+
                         <div class="row justify-content-end">
+
                             <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
+
                                 <span aria-hidden="true">&times;</span>
+
                             </button>
+
                         </div>
+
                         <div class="row justify-content-md-center">
+
                             <i class="fa fa-check-circle subscribe-icon"></i>
+
                         </div>
+
                         <div class="row justify-content-md-center">
+
                             <div class="col-12 subs-header">Thanks for subscribing us.</div>
+
                             <div class="col-12 subs-text">We will send news and offers regarding Indian Cuisinier.</div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
         <!-- carrer success modal -->
+
         <div class="modal fade" id="carrer-modal" tabindex="-1" role="dialog" aria-labelledby="apply-modal" aria-hidden="true">
+
             <div class="modal-dialog" role="document">
+
                 <div class="modal-content">
+
                     <div class="modal-body">
+
                         <div class="row justify-content-end">
+
                             <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
+
                                 <span aria-hidden="true">&times;</span>
+
                             </button>
+
                         </div>
+
                         <div class="row justify-content-md-center">
+
                             <i class="fa fa-check-circle subscribe-icon"></i>
+
                         </div>
+
                         <div class="row justify-content-md-center">
+
                             <div class="col-12 subs-header">Thanks for contacting with us.</div>
+
                             <div class="col-12 subs-text">We will contact you with in 24 hours.</div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
+ 
 
         <!-- Error Modal PopUp-->
+
         <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal" aria-hidden="true">
+
             <div class="modal-dialog" role="document">
+
                 <div class="modal-content">
+
                     <div class="modal-body">
+
                         <div class="row justify-content-end">
+
                             <button type="button" class="close modal-close-icon" data-dismiss="modal" aria-label="Close">
+
                                 <span aria-hidden="true">&times;</span>
+
                             </button>
+
                         </div>
+
                         <div class="row justify-content-md-center">
+
                             <img class="error_page" src="static/images/internal_server_error.png" />
+
                         </div>
+
                         <div class="row justify-content-md-center">
+
                             <div class="col-12 subs-header">Oops something went worng.</div>
+
                             <div class="col-12 subs-text">Sorry for inconvenience,Please try after some time.</div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
 
+ 
+
         <!-- scripts  -->
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
         <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script> -->
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
         <script type="text/javascript" src="/static/js/app.js"></script>
+
         <script src="/static/js/jquery.inputfit.js"></script>
 
+ 
 
+ 
+
+ 
 
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0SDFw8GylrVTzbBw8lcgCaFpan2koddA&callback=initMap"></script>
+
         <script type="text/javascript">
+
         function initMap() {
+
             var locationRio = { lat: 17.441603, lng: 78.365077 };
+
             var map = new google.maps.Map(document.getElementById('map'), {
+
                 zoom: 13,
+
                 center: locationRio,
+
                 gestureHandling: 'cooperative'
+
             });
+
             var marker = new google.maps.Marker({
+
                 position: locationRio,
+
                 map: map,
+
                 title: 'Indian Cuisinier'
+
             });
+
         }
+
         </script>
+
         <script>
+
         $(function(){
+
             $('#subscribe_user_email').inputfit();
+
         })
+
     </script>
 
+ 
 
-       
+ 
+
+      
+
         
 
+ 
+
     </div>
+
 </body>
+
+ 
 
 </html>

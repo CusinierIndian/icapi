@@ -1,485 +1,1205 @@
-$(document).ready(function(){
-	console.log("page is loaded");
 
 
+$(document).ready(function () {
 
-	var countDownDate = new Date("Nov 1, 2017 11:46:00").getTime();
-	var x = setInterval(function() {
+    console.log("page is loaded");
 
-	    // Get todays date and time
-	    var now = new Date().getTime();
-	    
-	    // Find the distance between now an the count down date
-	    var distance = countDownDate - now;
-	    
-	    // Time calculations for days, hours, minutes and seconds
-	    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-	    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-	    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-	    
-	    // Output the result in an element with id="demo"
-	    document.getElementById("tiles").innerHTML = "<div>" + days + "</div><div>" + hours + "</div><div>" + minutes + "</div><div>" + seconds + "</div>"; 
-	    
-	    // If the count down is over, write some text 
-	    if (distance < 0) {
-	        clearInterval(x);
-	        document.getElementById("tiles").innerHTML = "EXPIRED";
-	    }
-	}, 1000);
+ 
 
+ 
 
-	// for closing nav-bar link after click
-	$('.nav-link').on('click',function(e) {
- 		$('.navbar-collapse').collapse('hide');
- 		
-	});
+ 
 
-	// for smooth scrolling
-	$("a").on('click', function(event) {
-    
-	    // Make sure this.hash has a value before overriding default behavior
-	    if (this.hash !== "") {
-	      	// Prevent default anchor click behavior
-			event.preventDefault();
+    var countDownDate = new Date("Nov 1, 2017 11:46:00").getTime();
 
-			// Store hash
-			var hash = this.hash;
-			var position = ($(hash).offset().top - 80) + 'px';
-			console.log("position",position);
+    var x = setInterval(function () {
 
-			// Using jQuery's animate() method to add smooth page scroll
-			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-			$('html, body').animate({
-				scrollTop: position
-				}, 1000, function(){
-				// Add hash (#) to URL when done scrolling (default click behavior)
-				window.location.hash = hash;
-			});
-    	} // End if
-	});
+ 
 
-    $('.service-card').hover(function(){
-        $(this).find('.service-card-text').css('display','block');
-    },function(){
-        $(this).find('.service-card-text').css('display','none');
+        // Get todays date and time
+
+        var now = new Date().getTime();
+
+ 
+
+        // Find the distance between now an the count down date
+
+        var distance = countDownDate - now;
+
+ 
+
+        // Time calculations for days, hours, minutes and seconds
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+ 
+
+        // Output the result in an element with id="demo"
+
+        document.getElementById("tiles").innerHTML = "<div>" + days + "</div><div>" + hours + "</div><div>" + minutes + "</div><div>" + seconds + "</div>";
+
+ 
+
+        // If the count down is over, write some text
+
+        if (distance < 0) {
+
+            clearInterval(x);
+
+            document.getElementById("tiles").innerHTML = "EXPIRED";
+
+        }
+
+    }, 1000);
+
+ 
+
+ 
+
+    // for closing nav-bar link after click
+
+    $('.nav-link').on('click', function (e) {
+
+        $('.navbar-collapse').collapse('hide');
+
+ 
+
+    });
+
+ 
+
+    // for smooth scrolling
+
+    $("a").on('click', function (event) {
+
+ 
+
+        // Make sure this.hash has a value before overriding default behavior
+
+        if (this.hash !== "") {
+
+            // Prevent default anchor click behavior
+
+            event.preventDefault();
+
+ 
+
+            // Store hash
+
+            var hash = this.hash;
+
+            var position = ($(hash).offset().top - 80) + 'px';
+
+            console.log("position", position);
+
+ 
+
+            // Using jQuery's animate() method to add smooth page scroll
+
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+
+            $('html, body').animate({
+
+                scrollTop: position
+
+            }, 1000, function () {
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+
+                window.location.hash = hash;
+
+            });
+
+        } // End if
+
+    });
+
+ 
+
+    $('.service-card').hover(function () {
+
+        $(this).find('.service-card-text').css('display', 'block');
+
+    }, function () {
+
+        $(this).find('.service-card-text').css('display', 'none');
+
     })
-	//color change based on user input for contact us form 
-	
 
-	//color change based on user input for contact us form
+    //color change based on user input for contact us form
 
+ 
 
+ 
 
-    //var contactNamePattern=/^[a-zA-Z]+$/;
+    //color change based on user input for contact us form
+
+ 
+
+ 
+
+ 
+
+    var contactNamePattern = /^([a-zA-Z]){2,30}$/;
+
+ 
 
     var msg;
 
+ 
+
     $('#contact_name').keyup(function () {
+
+ 
 
         var data = $(this).val();
 
+ 
+
         console.log(data);
 
-        if (data.length >= 1) {
+ 
+
+        if (data.match(contactNamePattern)) {
+
+ 
+
+ 
+
+ 
 
             $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
+ 
+
+ 
+
+ 
+
         }
 
-        else {
+        else if (data == "") {
 
             $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
-
+            msg = "Name field cannot be empty";
 
         }
 
-       // document.getElementById("cformName").innerHTML = msg;
+ 
+
+ 
+
+        else {
+
+ 
+
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+            msg = "Enter characters only";
+
+ 
+
+ 
+
+ 
+
+        }
+
+ 
+
+ 
+
+        document.getElementById("cformName").innerHTML = msg;
+
+ 
 
     });
 
+ 
 
+ 
+
+ 
 
     var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
+ 
+
     $('#contact_email').keyup(function (e) {
+
+ 
 
         var data = $('#contact_email').val().trim();
 
+ 
+
         console.log(data);
+
+ 
 
         if (data.match(pattern)) {
 
+ 
+
             $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
+ 
+
         }
+
+ 
 
         else {
 
+ 
+
             $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+ 
 
         }
 
+ 
+
     });
 
+ 
 
-
-
+ 
 
     var text;
 
+ 
+
     $('#contact_phone_no').keyup(function (e) {
+
+ 
 
         var data = $('#contact_phone_no').val().trim();
 
+ 
+
         console.log(data);
+
+ 
 
         if ((isNaN(data))) {
 
+ 
+
             $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
+ 
+
             text = "Enter number only";
+
+ 
+
+        }
+
+ 
+
+        else {
+
+ 
+
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+ 
+
+ 
+
+ 
+
+        }
+
+ 
+
+        document.getElementById("cformPhone").innerHTML = text;
+
+ 
+
+    });
+
+ 
+
+    // changing of absolute to fixed nav bar
+
+    $(window).scroll(function () {
+
+        var height = $(window).scrollTop();
+
+ 
+
+        if (height > 90) {
+
+            console.log("condition true");
+
+            $('.navbar').removeClass('transparent-navbar').addClass('fixed-navbar fixed-navbar-shadow');
 
         }
 
         else {
 
-            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+            console.log("condition false");
 
-
+            $('.navbar').removeClass('fixed-navbar fixed-navbar-shadow').addClass('transparent-navbar');
 
         }
 
-        document.getElementById("cformPhone").innerHTML = text;
-
     });
 
-    // changing of absolute to fixed nav bar
-    $(window).scroll(function() {
-	    var height = $(window).scrollTop();
+ 
 
-	    if(height  > 90) {
-	        console.log("condition true");
-	        $('.navbar').removeClass('transparent-navbar').addClass('fixed-navbar fixed-navbar-shadow');
-	    }
-	    else{
-	    	console.log("condition false");
-	    	$('.navbar').removeClass('fixed-navbar fixed-navbar-shadow').addClass('transparent-navbar');
-	    }
-	});
+    // window.addEventListener("hashchange", function() { scrollBy(10, -50) })
 
-	// window.addEventListener("hashchange", function() { scrollBy(10, -50) })
 })
 
+ 
 
+ 
+
+ 
 
 //validation for modal
 
+ 
 
-//var charPattern=/^[a-zA-Z]+$/;
+ 
+
+ 
+
 var domainPort = '127.0.0.1:8000';
 
+var charPattern = /^[a-zA-Z]+$/;
+
 var text;
+
+ 
 
 $('#apply_name').keyup(function () {
 
+ 
+
     var data = $(this).val();
+
+ 
 
     console.log(data);
 
-    if (data.length >= 1) {
+ 
+
+    if (data.match(charPattern)) {
+
+ 
+
+ 
+
+ 
 
         $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
+ 
+
+ 
+
+ 
+
     }
 
-    else {
+    else if (data == "") {
 
         $(this).parent('div').removeClass('has-success').addClass('has-warning');
 
-
+        text = "Name field cannot be empty!!!!";
 
     }
 
+ 
+
+ 
+
+    else {
+
+ 
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+        text = "Enter characters only";
+
+ 
+
+ 
+
+ 
+
+    }
+
+ 
+
+ 
+
+    document.getElementById("apply_nm").innerHTML = text;
+
+ 
+
 });
 
+ 
+
+ 
 
 var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+ 
 
 $('#apply_email').keyup(function (e) {
 
+ 
+
     var data = $('#apply_email').val().trim();
+
+ 
 
     console.log(data);
 
+ 
+
     if (data.match(pattern)) {
+
+ 
 
         $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
+ 
+
     }
+
+ 
 
     else {
 
+ 
+
         $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+ 
 
     }
 
+ 
+
 });
 
+ 
 
+ 
+
+ 
 
 var text;
 
+ 
+
 $('#apply_phone_no').keyup(function (e) {
+
+ 
 
     var data = $('#apply_phone_no').val().trim();
 
+ 
+
     console.log(data);
 
+ 
 
+ 
+
+ 
 
     if ((isNaN(data))) {
 
+ 
+
         $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+ 
 
         text = "Enter number only";
 
+ 
+
     }
+
+ 
+
+ 
 
     else {
 
+ 
+
         $(this).parent('div').removeClass('has-warning').addClass('has-success');
 
+ 
 
+ 
+
+ 
 
     }
+
+ 
 
     document.getElementById("phnum").innerHTML = text;
 
+ 
+
 });
 
+ 
 
+ 
+
+ 
 
 //subscription email
 
+ 
 
+ 
+
+ 
 
 var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
+ 
 
+ 
+
+ 
 
 $('#sub-email').keyup(function (e) {
 
+ 
+
     var data = $('#sub-email').val().trim();
+
+ 
 
     console.log(data);
 
+ 
+
     if (data.match(pattern)) {
 
+ 
+
         $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+ 
+
+    }
+
+ 
+
+    else {
+
+ 
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+ 
+
+    }
+
+ 
+
+});
+
+ 
+
+ 
+
+ 
+
+ 
+
+  var serviceNamePattern = /^([a-zA-Z]){2,30}$/;
+
+ 
+
+    var msg;
+
+ 
+
+    $('#service_name').keyup(function () {
+
+ 
+
+        var data = $(this).val();
+
+ 
+
+        console.log(data);
+
+ 
+
+        if (data.match(serviceNamePattern)) {
+
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+        }
+
+        else if (data == "") {
+
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+            msg = "Name field cannot be empty";
+
+        }
+
+        else {
+
+ 
+
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+            msg = "Enter characters only";
+
+        }
+
+        document.getElementById("service_nm").innerHTML = msg;
+
+ 
+
+    });
+
+ 
+
+ 
+
+ 
+
+    var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+ 
+
+    $('#service_email').keyup(function (e) {
+
+ 
+
+        var data = $('#service_email').val().trim();
+
+ 
+
+        console.log(data);
+
+ 
+
+        if (data.match(pattern)) {
+
+ 
+
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+ 
+
+        }
+
+ 
+
+        else {
+
+ 
+
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+ 
+
+        }
+
+ 
+
+    });
+
+ 
+
+ 
+
+    var text;
+
+ 
+
+    $('#service_phone_no').keyup(function (e) {
+
+ 
+
+        var data = $('#service_phone_no').val().trim();
+
+ 
+
+        console.log(data);
+
+ 
+
+        if ((isNaN(data))) {
+
+ 
+
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+ 
+
+            text = "Enter number only";
+
+ 
+
+        }
+
+ 
+
+        else {
+
+ 
+
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+        }
+
+ 
+
+        document.getElementById("service_phone").innerHTML = text;
+
+ 
+
+    });
+
+ 
+
+ 
+
+ 
+
+var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+ 
+
+var validateEmail = function (data) {
+
+    console.log('validate email', data);
+
+    return data.match(emailPattern) ? true : false;
+
+}
+
+ 
+
+var subscribe_user = function () {
+
+    var email = $('#subscribe_user_email').val().trim();
+
+    console.log('subscribe user', JSON.stringify({ 'email': email }));
+
+    if (validateEmail(email)) {
+
+        var requestData = { 'email': email };
+
+        console.log("valid email");
+
+        $.ajax({
+
+            url: 'http://127.0.0.1:5000/ic/subscribe',
+
+            type: 'POST',
+
+            contentType: "application/json; charset=utf-8",
+
+            dataType: 'json',
+
+            crossDomain: true,
+
+            data: JSON.stringify(requestData),
+
+            success: function (data) {
+
+                if (data.notification.code == 200 || data.notification.code == 'ic_500') {
+
+                    console.log("subscribe successfull")
+
+                    $('#subscription-modal-success').modal('show');
+
+                }
+
+                else {
+
+                    console.log("subscribe failed")
+
+                    $('#error-modal').modal('show');
+
+                }
+
+                $('#subscribe_user_email').val('');
+
+            }
+
+        });
 
     }
 
     else {
 
-        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        console.log("Invalid email");
 
     }
 
-});
-
-
-var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-
-var validateEmail = function(data){
-    console.log('validate email',data);
-    return data.match(emailPattern)? true:false;
-}
-
-var subscribe_user = function(){
-    var email = $('#subscribe_user_email').val().trim();
-    console.log('subscribe user',JSON.stringify({'email':email}));
-    if(validateEmail(email)){
-        var requestData = {'email':email};
-        console.log("valid email");
-         $.ajax({
-            url: 'http://127.0.0.1:5000/ic/subscribe',
-            type: 'POST',
-            contentType: "application/json; charset=utf-8",
-            dataType:'json',
-            crossDomain: true,
-            data:JSON.stringify(requestData),
-            success: function (data) {
-               if(data.notification.code == 200 || data.notification.code == 'ic_500'){
-                    console.log("subscribe successfull")
-                    $('#subscription-modal-success').modal('show');
-               }
-               else{
-                    console.log("subscribe failed")
-                    $('#error-modal').modal('show');
-               }
-               $('#subscribe_user_email').val('');
-            }
-        });
-    }
-    else{
-        console.log("INvalid email");
-    }
     return false;
+
 }
 
-var applyForCarrer = function(el){
-    console.log("apply for carrer",el);
+ 
+
+var applyForCarrer = function (el) {
+
+    console.log("apply for carrer", el);
+
     $('#apply_error').html('');
-    var requestData = {},errMsg = '';
+
+    var requestData = {}, errMsg = '';
+
     requestData.name = $('#apply_name').val();
+
     requestData.email = $('#apply_email').val();
+
     requestData.phone = $('#apply_phone_no').val();
+
     requestData.role = $('#apply_designation').val();
-    console.log('form data',requestData);
-    if(!requestData.name  || !requestData.phone){
+
+    console.log('form data', requestData);
+
+    if (!requestData.name && !requestData.phone) {
+
         errMsg = 'Name and Phone number are required.'
+
         $('#apply_error').html(errMsg);
-    }
-    else if(isNaN(requestData.phone) || requestData.phone.length != 10){
-        errMsg = 'Enter valid phone Number.';
-         $('#apply_error').html(errMsg);
-    }
-    else if(requestData.email && !validateEmail(requestData.email)){
-        errMsg = 'Enter valid phone Number.';
-         $('#apply_error').html(errMsg);
-    }
-    else{
-        console.log('api calling');
-         $.ajax({
-            url: 'http://127.0.0.1:5000/ic/careers',
-            type: 'POST',
-            contentType: "application/json; charset=utf-8",
-            dataType:'json',
-            crossDomain: true,
-            data:JSON.stringify(requestData),
-            success: function (data) {
-                $('#apply-modal').modal('hide');
-               if(data.notification.code == 200){
-                    $('#carrer-modal').modal('show');
-               }
-               else{
-                    $('#error-modal').modal('show');
-               }
-                $('#apply_name').val('');
-                $('#apply_email').val('');
-                $('#apply_phone_no').val('');
-            },
-            error:function(data){
-                 if(data.notification.code == 500){
-                    console.log("apply failed");
-                    $('#error-modal').modal('show');
-               }
-            }
-        });
-    }
-}
 
-var contactUs = function(){
-    $('#contact_error').html('');
-    var requestData = {},errMsg = '';
-    requestData.name = $('#contact_name').val();
-    requestData.email = $('#contact_email').val();
-    requestData.phone = $('#contact_phone_no').val();
-    console.log("contactus",requestData);
-    if(!requestData.name || !requestData.email || !requestData.phone ){
-        errMsg = 'All fields are required.'
-        $('#contact_error').html(errMsg);
     }
-    else if(!validateEmail(requestData.email)){
-        errMsg = 'Enter valid email adresss.';
-         $('#contact_error').html(errMsg);
-    }
-    else if(isNaN(requestData.phone) || requestData.phone.length != 10){
+
+    else if (isNaN(requestData.phone) || requestData.phone.length != 10) {
+
         errMsg = 'Enter valid phone Number.';
-         $('#contact_error').html(errMsg);
+
+        $('#apply_error').html(errMsg);
+
     }
-    else{
+
+    else if (requestData.email && !validateEmail(requestData.email)) {
+
+        errMsg = 'Enter valid email.';
+
+        $('#apply_error').html(errMsg);
+
+    }
+
+    else {
+
         console.log('api calling');
-         $.ajax({
-            url: 'http://127.0.0.1:5000/ic/contactus',
-            type: 'POST',
-            contentType: "application/json; charset=utf-8",
-            datatype:'json',
-            crossDomain: true,
-            data:JSON.stringify(requestData),
-            success: function (data) {
-               if(data.notification.code == 200){
-                    console.log("apply successfull")
-                    $('#carrer-modal').modal('show');
-               }
-               else{
-                    $('#error-modal').modal('show');
-               }
-                $('#contact_name').val('');
-                $('#contact_email').val('');
-                $('#contact_phone_no').val('');
-            }
-        });
-    }
-}
-var applyForService = function(el){
-    console.log("apply for service",el);
-    $('#service_error').html('');
-     var requestData = {},errMsg = '';
-    requestData.customerName = $('#service_name').val();
-    requestData.customerEmail = $('#service_email').val();
-    requestData.customerPhone = $('#service_phone_no').val();
-    requestData.customerLocation = $('#service_location').val();
-    requestData.customerPreference = $('#customer_prefrences').val();
-    requestData.numberOfMembers = $('#no_of_people').val();
-    console.log("form data",requestData);
-    if(!requestData.customerName || !requestData.customerEmail || !requestData.customerPhone || !requestData.numberOfMembers){
-        errMsg = 'All fields are required.';
-        $('#service_error').html(errMsg);
-    }
-    else if(isNaN(requestData.customerPhone) || requestData.customerPhone.length != 10){
-        errMsg = 'Enter valid phone Number.';
-        $('#service_error').html(errMsg);
-    }
-    else if(!validateEmail(requestData.customerEmail)){
-        errMsg = 'Enter valid Email Id.';
-        $('#service_error').html(errMsg);
-    }
-    else if( requestData.numberOfMembers < 1){
-        errMsg = 'Enter valid No of people';
-        $('#service_error').html(errMsg);
-    }
-    else{
+
         $.ajax({
-            url: 'http://127.0.0.1:5000/ic/cookbooking',
+
+            url: 'http://127.0.0.1:5000/ic/careers',
+
             type: 'POST',
+
             contentType: "application/json; charset=utf-8",
-            datatype:'json',
+
+            dataType: 'json',
+
             crossDomain: true,
-            data:JSON.stringify(requestData),
+
+            data: JSON.stringify(requestData),
+
             success: function (data) {
-                $('#service-modal').modal('hide');
-               if(data.notification.code == 200){
-                    console.log("apply successfull")
+
+                $('#apply-modal').modal('hide');
+
+                if (data.notification.code == 200) {
+
                     $('#carrer-modal').modal('show');
-               }
-               else{
+
+                }
+
+                else {
+
                     $('#error-modal').modal('show');
-               }
-                $('#service_name').val('');
-                $('#service_email').val('');
-                $('#service_phone_no').val('');
-                $('#service_location').val('');
-                $('#customer_prefrences').val('');
-                $('#no_of_people').val('');
+
+                }
+
+                $('#apply_name').val('');
+
+                $('#apply_email').val('');
+
+                $('#apply_phone_no').val('');
+
+            },
+
+            error: function (data) {
+
+                if (data.notification.code == 500) {
+
+                    console.log("apply failed");
+
+                    $('#error-modal').modal('show');
+
+                }
+
             }
+
         });
-    }    
+
+   }
+
 }
 
-  
+ 
 
+var contactUs = function () {
 
+    $('#contact_error').html('');
 
+    var requestData = {}, errMsg = '';
+
+    requestData.name = $('#contact_name').val();
+
+    requestData.email = $('#contact_email').val();
+
+    requestData.phone = $('#contact_phone_no').val();
+
+    console.log("contactus", requestData);
+
+    //console.log(!requestData.name);
+
+ 
+
+ 
+
+    if (!requestData.name && !requestData.email && !requestData.phone) {
+
+        errMsg = 'All fields are required.'
+
+        $('#contact_error').html(errMsg);
+
+    }
+
+ 
+
+    else if (!validateEmail(requestData.email)) {
+
+        errMsg = 'Enter valid email adresss.';
+
+        $('#contact_error').html(errMsg);
+
+    }
+
+    else if (isNaN(requestData.phone) || requestData.phone.length != 10) {
+
+        errMsg = 'Enter valid phone Number.';
+
+        $('#contact_error').html(errMsg);
+
+    }
+
+    else {
+
+        console.log('api calling');
+
+        $.ajax({
+
+            url: 'http://127.0.0.1:5000/ic/contactus',
+
+            type: 'POST',
+
+            contentType: "application/json; charset=utf-8",
+
+            datatype: 'json',
+
+            crossDomain: true,
+
+            data: JSON.stringify(requestData),
+
+            success: function (data) {
+
+                if (data.notification.code == 200) {
+
+                    console.log("apply successfull")
+
+                    $('#carrer-modal').modal('show');
+
+                }
+
+                else {
+
+                    $('#error-modal').modal('show');
+
+                }
+
+                $('#contact_name').val('');
+
+                $('#contact_email').val('');
+
+                $('#contact_phone_no').val('');
+
+            }
+
+        });
+
+    }
+
+}
+
+var applyForService = function (el) {
+
+    console.log("apply for service", el);
+
+    $('#service_error').html('');
+
+    var requestData = {}, errMsg = '';
+
+    requestData.customerName = $('#service_name').val();
+
+    requestData.customerEmail = $('#service_email').val();
+
+    requestData.customerPhone = $('#service_phone_no').val();
+
+    requestData.customerPincode = $('#service_pincode').val();
+
+    requestData.customerLocation = $('#service_location').val();
+
+    requestData.customerCity = $('#service_city').val();
+
+    requestData.customerState = $('#service_state').val();
+
+    requestData.customerAddress = $('#service_address').val();
+
+    requestData.customerLandmark = $('#service_landmark').val();
+
+                requestData.customerLandmark = $('#service_alternate_phone_no').val();
+
+    requestData.customerPreference = $('#customer_prefrences').val();
+
+    requestData.numberOfMembers = $('#no_of_people').val();
+
+    console.log("form data", requestData);
+
+    if (!requestData.customerName && !requestData.customerEmail && !requestData.customerPhone && !requestData.numberOfMembers && !requestData.customerPincode && ! requestData.customerAddress) {
+
+        errMsg = 'All fields are required.';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (isNaN(requestData.customerPhone) || requestData.customerPhone.length != 10) {
+
+        errMsg = 'Enter valid phone Number.';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+                else if (requestData.customerPincode != 6) {
+
+        errMsg = 'Enter valid No of people';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+                else if(requestData.customerAddress =="")
+
+                {
+
+                                errMsg = 'Enter Address';
+
+        $('#service_error').html(errMsg);
+
+                }
+
+    else if (!validateEmail(requestData.customerEmail)) {
+
+        errMsg = 'Enter valid Email Id.';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (requestData.numberOfMembers < 1) {
+
+        errMsg = 'Enter valid number of people';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+               
+
+    else {
+
+        $.ajax({
+
+            url: 'http://127.0.0.1:5000/ic/cookbooking',
+
+            type: 'POST',
+
+            contentType: "application/json; charset=utf-8",
+
+            datatype: 'json',
+
+            crossDomain: true,
+
+            data: JSON.stringify(requestData),
+
+            success: function (data) {
+
+                $('#service-modal').modal('hide');
+
+                if (data.notification.code == 200) {
+
+                    console.log("apply successfull")
+
+                    $('#carrer-modal').modal('show');
+
+                }
+
+                else {
+
+                    $('#error-modal').modal('show');
+
+                }
+
+                $('#service_name').val('');
+
+                $('#service_email').val('');
+
+                $('#service_phone_no').val('');
+
+                $('#service_location').val('');
+
+                $('#customer_prefrences').val('');
+
+                $('#no_of_people').val('');
+
+            }
+
+        });
+
+    }
+
+}
