@@ -1,4 +1,5 @@
-from sqlalchemy import Column, String, Boolean, Integer, Float, Date, Numeric
+from sqlalchemy import Column, String, Boolean, Integer, Float, Date, Numeric, ForeignKey
+from sqlalchemy.orm import relationship
 # from config import app
 from config import app
 from flask_sqlalchemy import SQLAlchemy 
@@ -115,6 +116,38 @@ class TemporaryBooking(Base):
 	isRequiredInMorning = Column(Boolean, nullable=False)
 	isRequiredInEvening = Column(Boolean, nullable=False)
 	numberOfMembers = Column(Integer, nullable=False)
+
+class CustomerDetailsTemp(Base):
+
+	__tablename__ = 'customer_details_temp'
+
+	def __init__(self, id, customerName, customerEmail, customerPhone, cookName):
+		self.id = id
+		self.customerName = customerName
+		self.customerEmail = customerEmail
+		self.customerPhone = customerPhone
+		self.cookName = cookName
+
+	id = Column(String(100), primary_key=True, nullable=False)
+	customerName = Column(String(255), nullable=False)
+	customerPhone = Column(String(15), nullable=False, unique=True)
+	customerEmail = Column(String(50), nullable=False,unique=True)
+	cookName = Column(String(255), nullable=False)
+
+class Feedback(Base):
+	__tablename__ = 'feedback'
+
+	def __init__(self, id, customerDetailsId, feedback):
+		self.id = id
+		self.customerDetailsId = customerDetailsId
+		self.feedback = feedback
+
+	id = Column(String(100), primary_key=True, nullable=False)
+	customerDetailsId = Column(ForeignKey(u'customer_details_temp.id'), nullable=False)
+	feedback = Column(String(1000), nullable=False)
+	customerDetails = relationship('CustomerDetailsTemp', backref=db.backref('feedback', lazy='dynamic'))
+
+
 
 
 

@@ -17,7 +17,6 @@ def validatePhoneNumber(phoneNumber):
 #Generate Unique Id
 def generateUniqueId():
 	id = uuid.uuid4()
-	print id
 	return id
 
 #Generate company Id

@@ -2,6 +2,7 @@ from basecontrollers import BaseController
 from constants.constants import Constants
 from transformer.transformers import ExceptionTransformers
 from repository.dboperations import DBOperations
+from utility.utilities import validateEmail, generateUniqueId
 
 
 #Subcription controller
@@ -114,7 +115,18 @@ class BookingController(BaseController):
 			, isRequiredInMorning, isRequiredInEvening
 			, cookBookingDetails.get('numberOfMembers'))
 
-		return self.dbConnection.bookACook(bookACook)		
+		return self.dbConnection.bookACook(bookACook)	
+
+#Temporary Feedback controller
+class FeedbackController(BaseController):
+	
+	def __init__(self):
+		self.dbConnection = DBOperations()
+
+	def customerFeedBack(self, feedback):
+
+		return self.dbConnection.customerFeedback(feedback)
+		
 
 
 

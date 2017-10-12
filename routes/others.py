@@ -1,6 +1,7 @@
 from flask import Flask, Blueprint, request, jsonify, render_template
 from transformer.transformers import ExceptionTransformers
 from constants.constants import Constants
+from werkzeug.exceptions import BadRequest
 
 others = Blueprint('others', __name__)
 
@@ -45,6 +46,18 @@ def bookCook():
 	else:
 		from controllers.controllers import BookingController
 		return jsonify(BookingController().bookACook(cookBookingDetails))
+
+
+#Temporary feedback api from customers
+@others.route('/feedback', methods=['POST'])
+def customerFeedback():
+	try:
+		feedback = request.get_json()
+	except BadRequest as e:
+		return jsonify(ExceptionTransformers().transformException(Constants.INVALID_INPUT, Constants.INVALID_JSON, Constants.STATUS_FAILED))
+	else: 
+		from controllers.controllers import FeedbackController
+		return jsonify(FeedbackController().customerFeedBack(feedback))
 
 
 

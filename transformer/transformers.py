@@ -112,6 +112,25 @@ class Transformers:
 				'code' : code
 			}
 		}
+	def transformReviewInsert(self, model, status, code):
+		reviewList = []
+		for f in model.feedback:
+			reviewList.append(f.feedback)
+		reviewList.reverse()
+		return {
+			'data' : {
+				'customerId' : model.id,
+				'customerName' : model.customerName,
+				'customerEmail' : model.customerEmail,
+				'customerPhone' : model.customerPhone,
+				'cookAssigned' : model.cookName,
+				'comments' : reviewList
+			},
+			'notification' : {
+				'status' : status,
+				'code' : code
+			}
+		}
 
 
 

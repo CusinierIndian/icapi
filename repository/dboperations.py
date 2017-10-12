@@ -1,6 +1,7 @@
 from constants.constants import Constants
-from models.models import SubscribedUser, ContactUs,Careers, CookBasicDetails, TemporaryBooking, db
+from models.models import SubscribedUser, ContactUs,Careers, CookBasicDetails, TemporaryBooking, CustomerDetailsTemp, Feedback, db
 from sqlalchemy import update
+from sqlalchemy.exc import IntegrityError
 class DBOperations:
 
 	def __init__(self):
@@ -123,6 +124,35 @@ class DBOperations:
 
 		else:
 			return self.transformer.transformerBookACook(TemporaryBooking.query.filter_by(id=cookBookingDetails.id).first(), Constants.STATUS_SUCCESS,Constants.SUCCESS_CODE)
+
+
+	#Temporary customer feedback
+	def customerFeedback(self, feedback):
+		global customerId
+		try:
+			response = CustomerDetailsTemp.query.filter_by(customerPhone=feedback.get('customerPhone')).first()
+			from utility.utilities import generateUniqueId
+			if response is None:
+				customerDetails = CustomerDetailsTemp(str(generateUniqueId())
+				, feedback.get('customerName'), feedback.get('customerEmail'), feedback.get('customerPhone')
+				, feedback.get('cookName'))
+				customerId = str(generateUniqueId())
+				comment = Feedback(customerId, customerDetails.id, feedback.get('feedback'))
+				self.session.add(customerDetails)
+				self.session.add(comment)
+			else:
+				customerId = response.id
+				comment = Feedback(str(generateUniqueId()), customerId, feedback.get('feedback'))
+				self.session.add(comment)
+			self.session.commit()
+			cust = CustomerDetailsTemp.query.filter_by(customerPhone=feedback.get('customerPhone')).first()
+			return self.transformer.transformReviewInsert(cust, Constants.STATUS_SUCCESS,Constants.SUCCESS_CODE)
+
+		except Exception as e:
+			e.message
+			
+
+
 
 
 
