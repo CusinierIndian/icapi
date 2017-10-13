@@ -149,8 +149,16 @@ class DBOperations:
 			return self.transformer.transformReviewInsert(cust, Constants.STATUS_SUCCESS,Constants.SUCCESS_CODE)
 
 		except Exception as e:
-			e.message
-			
+			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
+
+	#Retreive feedback
+	def getFeedbacks(self):
+		try:
+			response = CustomerDetailsTemp.query.all()
+		except Exception as e:
+			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
+		else:
+			return response			
 
 
 

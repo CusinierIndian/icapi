@@ -132,6 +132,15 @@ class Transformers:
 			}
 		}
 
+	def transformGetFeedback(self, list, status, code):
+		return {
+			'data' : list,
+			'notification' : {
+				'status' : status,
+				'code' : code
+			}
+		}
+
 
 
 class ExceptionTransformers:
