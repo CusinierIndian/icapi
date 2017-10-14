@@ -681,6 +681,52 @@ $('#service_phone_no').keyup(function (e) {
 
 });
 
+
+var text;
+
+$('#service_pincode').keyup(function (e) {
+
+
+
+    var data = $('#service_pincode').val().trim();
+
+
+
+    console.log(data);
+
+
+
+    if ((isNaN(data))) {
+
+
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+
+
+        text = "Enter number only";
+
+
+
+    }
+
+
+
+    else {
+
+
+
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+
+
+
+    document.getElementById("service_pin").innerHTML = text;
+
+
+
+});
 var text;
 
 $('#service_alternate_phone_no').keyup(function (e) {

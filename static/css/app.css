@@ -149,7 +149,7 @@ a.nav-link:hover {
     border-radius: 5px;
     padding: 20px;
     font-weight: 500;
-    word-spacing: 0.2rem;
+    word-spacing: 0.1rem;
 }
 .margin-20{
 	margin:20px;
@@ -321,6 +321,7 @@ label{
 	text-align: justify;
     -moz-text-align-last: left; /* Code for Firefox */
     text-align-last: left;
+    word-spacing: 0.1rem;
 }
 #apply_error,#contact_error{
 	color:red;
