@@ -126,6 +126,24 @@ class FeedbackController(BaseController):
 	def customerFeedBack(self, feedback):
 
 		return self.dbConnection.customerFeedback(feedback)
+
+	#method to retreive feedback
+	def getFeedbacks(self):
+		response = self.dbConnection.getFeedbacks();
+		feedbackList = []
+		for cd in response:
+			feedbackListInd = []
+			for f in cd.feedback:
+				feedbackListInd.append(f.feedback)
+			feedbackListInd.reverse()
+			feedbackList.append({
+				'customerId' : cd.id,
+				'customerName' : cd.customerName,
+				'latestComment' : feedbackListInd[0]
+				})
+		from transformer.transformers import Transformers
+		return Transformers().transformGetFeedback(feedbackList, Constants.SUCCESS_CODE, Constants.STATUS_SUCCESS)
+
 		
 
 

@@ -59,6 +59,12 @@ def customerFeedback():
 		from controllers.controllers import FeedbackController
 		return jsonify(FeedbackController().customerFeedBack(feedback))
 
+#Retrieving feedback from customer
+@others.route('/getfeedback', methods=['GET'])
+def retreiveFeedback():
+	from controllers.controllers import FeedbackController
+	return jsonify(FeedbackController().getFeedbacks())	
+
 
 
 
