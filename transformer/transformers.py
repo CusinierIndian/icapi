@@ -132,9 +132,10 @@ class Transformers:
 			}
 		}
 
-	def transformGetFeedback(self, list, status, code):
+	def transformGetFeedback(self, feedbackList, status, code):
+		feedbackList.reverse()
 		return {
-			'data' : list,
+			'data' : feedbackList,
 			'notification' : {
 				'status' : status,
 				'code' : code
