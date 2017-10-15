@@ -147,6 +147,25 @@ class Feedback(Base):
 	feedback = Column(String(1000), nullable=False)
 	customerDetails = relationship('CustomerDetailsTemp', backref=db.backref('feedback', lazy='dynamic'))
 
+class AdminUser(Base):
+	__tablename__ = 'admin_users'
+
+	def __init__(self, id, name, email, password, isMaster=False, isEmailVerified=False):
+		self.id = id
+		self.name = name
+		self.email = email
+		self.password = password
+		self.isMaster = isMaster
+		self.isEmailVerified = isEmailVerified
+
+	id = Column(String(100), primary_key=True, nullable=False)
+	name = Column(String(255), nullable=False)
+	email = Column(String(255), unique=True, nullable=False)
+	password = Column(String(50), nullable=False)
+	isMaster = Column(Boolean, nullable=False)
+	isEmailVerified = Column(Boolean, nullable=False)
+
+
 
 
 

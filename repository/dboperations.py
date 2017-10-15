@@ -158,7 +158,18 @@ class DBOperations:
 		except Exception as e:
 			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
 		else:
-			return response			
+			return response	
+
+
+	#Register User
+	def registerUser(self, userDetails, userType):
+		try:
+			self.session.add(userDetails)
+			self.session.commit()
+		except Exception as e:
+			return e.message
+		else:
+			return "succesfully registered"		
 
 
 

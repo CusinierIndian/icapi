@@ -142,7 +142,23 @@ class FeedbackController(BaseController):
 				'latestComment' : feedbackListInd[0]
 				})
 		from transformer.transformers import Transformers
-		return Transformers().transformGetFeedback(feedbackList, Constants.SUCCESS_CODE, Constants.STATUS_SUCCESS)
+		return Transformers().transformGetFeedback(feedbackList, Constants.STATUS_SUCCESS, Constants.SUCCESS_CODE)
+
+#Authentication Controller
+class AuthenticationController(BaseController):
+
+	def __init__(self):
+		self.dbConnection = DBOperations()
+
+	#method to register user
+	def registerUser(self, userDetails):
+		userType = userDetails.get('user')
+		if(userType == 'admin'):
+			from models.models import AdminUser
+			adminUser = AdminUser(str(generateUniqueId()), userDetails.get('name'), userDetails.get('email')
+				, userDetails.get('password'))
+			return self.dbConnection.registerUser(adminUser, userType)
+
 
 		
 
