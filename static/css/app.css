@@ -97,14 +97,14 @@ a.nav-link:hover {
 .row{
 	margin:0px;
 }
-.why-us-content >.row,.contact-us-content>.row,.service-content >.row{
+.why-us-content >.row,.contact-us-content>.row,.service-content >.row,.feedback-content >.row{
 	padding:15px 0px;
 	margin:0px;
 }
 .fixed-navbar-shadow{
 	box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
 }
-.why-us-heading,.career-heading,.service-heading{
+.why-us-heading,.career-heading,.service-heading,.feedback-heading{
 	font-size: 32px;
     font-weight: 600;
     color:#31aab9;
@@ -354,11 +354,20 @@ label{
 .padding-top-15{
 	padding:15px 0px;
 }
-#service_error{
+#service_error,#feedback_error{
 	padding:10px 0px;
 	color:red;
 	font-weight: 700;
 }
+
+/* feedback */
+.feedback-content {
+    padding: 25px;
+    background: #fff;
+	}
+
+
+
 
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575px) {
@@ -389,7 +398,7 @@ label{
 	.why-us-heading,.career-heading{
 		font-size:25px;
 	}
-	.why-us-content,.career-content,.contact-us-content{
+	.why-us-content,.career-content,.contact-us-content,.feedback-content{
 		padding:10px;
 	}
 	.contact-us-border{
@@ -452,4 +461,8 @@ label{
 }
 .sub{
 	color: #f7f8fc !important;
+}
+
+hr.style1{
+  border-top: 1px solid #8c8b8b;
 }
