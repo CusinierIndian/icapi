@@ -142,6 +142,19 @@ class Transformers:
 			}
 		}
 
+	def transformerRegisterUser(self, model, status, code):
+		return{
+			'data' : {
+				'id' : model.id,
+				'name' : model.name,
+				'email' : model.email
+			}, 
+			'notification' : {
+				'status' : status,
+				'code' : code
+			}
+		}
+
 
 
 class ExceptionTransformers:

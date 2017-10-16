@@ -9,3 +9,5 @@ class Constants:
 	STATUS_SUCCESS = 'Success'
 	INVALID_JSON = 'Invalid JSON'
 	BASE_ID_COOK = 100000
+	INTEGRITY_ERROR = "User already exists"
+	INTEGRITY_ERROR_CODE = 'ic_500'

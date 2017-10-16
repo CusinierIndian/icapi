@@ -1,5 +1,5 @@
 from constants.constants import Constants
-from models.models import SubscribedUser, ContactUs,Careers, CookBasicDetails, TemporaryBooking, CustomerDetailsTemp, Feedback, db
+from models.models import SubscribedUser, ContactUs,Careers, CookBasicDetails, TemporaryBooking, CustomerDetailsTemp, Feedback, AdminUser, db
 from sqlalchemy import update
 from sqlalchemy.exc import IntegrityError
 class DBOperations:
@@ -162,14 +162,29 @@ class DBOperations:
 
 
 	#Register User
-	def registerUser(self, userDetails, userType):
+	def registerUser(self, userDetails):
 		try:
 			self.session.add(userDetails)
 			self.session.commit()
+		except IntegrityError as integrityError:
+			return self.exceptionTransformer.transformException(Constants.INTEGRITY_ERROR_CODE, integrityError.message, Constants.INTEGRITY_ERROR)
 		except Exception as e:
-			return e.message
+			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
+
 		else:
-			return "succesfully registered"		
+			return self.transformer.transformerRegisterUser(userDetails.query.filter_by(id=userDetails.id).first(), Constants.STATUS_SUCCESS,Constants.SUCCESS_CODE)
+
+
+	#verify email
+	def verifyEmail(self, model, id):
+		try:
+			response = model.query.filter_by(id=id).first()
+			response.isEmailVerified = True
+			self.session.commit()
+		except Exception as e:
+			e.message	
+		else:
+			return response.isEmailVerified
 
 
 

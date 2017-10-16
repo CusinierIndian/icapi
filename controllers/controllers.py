@@ -157,7 +157,20 @@ class AuthenticationController(BaseController):
 			from models.models import AdminUser
 			adminUser = AdminUser(str(generateUniqueId()), userDetails.get('name'), userDetails.get('email')
 				, userDetails.get('password'))
-			return self.dbConnection.registerUser(adminUser, userType)
+			return self.dbConnection.registerUser(adminUser)
+
+
+	#method to verify email
+	def verifyEmail(self, verifiedEmail):
+		userType = verifiedEmail.get('user')
+		if(userType == 'admin'):
+			from models.models import AdminUser
+			return self.dbConnection.verifyEmail(AdminUser, verifiedEmail.get('id'))
+
+
+
+
+
 
 
 		
