@@ -812,6 +812,107 @@ var validateEmail = function (data) {
     return data.match(emailPattern) ? true : false;
 
 }
+/*validation for feedback */
+var feedbackNamePattern = /^([a-zA-Z]){2,30}$/;
+var msg;
+$('#feedback_name').keyup(function () {
+    var data = $(this).val();
+    console.log(data);
+    if (data.match(feedbackNamePattern)) {
+
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+
+    else if (data == "") {
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+        msg = "Name field cannot be empty";
+
+    }
+
+    else {
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        msg = "Enter characters only";
+    }
+
+    document.getElementById("name").innerHTML = msg;
+});
+
+
+var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+$('#feedback_email').keyup(function (e) {
+    var data = $('#feedback_email').val().trim();
+    console.log(data);
+    if (data.match(pattern)) {
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+    }
+else {
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+    }
+});
+
+
+var text;
+$('#feedback_phone_no').keyup(function (e) {
+    var data = $('#feedback_phone_no').val().trim();
+    console.log(data);
+    if ((isNaN(data))) {
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+        text = "Enter number only";
+    }
+
+    else {
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+
+    document.getElementById("phnum").innerHTML = text;
+
+
+
+});
+var feedbackCookNamePattern = /^([a-zA-Z]){2,30}$/;
+var msg;
+$('#feedback_cook_name').keyup(function () {
+    var data = $(this).val();
+    console.log(data);
+    if (data.match(feedbackCookNamePattern)) {
+
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+
+    else if (data == "") {
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+        msg = "Name field cannot be empty";
+
+    }
+
+    else {
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        msg = "Enter characters only";
+    }
+
+    document.getElementById("cook_nm").innerHTML = msg;
+});
+
+
+$('#feedback_comment').keyup(function () {
+    var data = $(this).val();
+    console.log(data);
+    if (data == "") {
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+    }
+});
+
+
+
 
 
 
@@ -876,6 +977,110 @@ var subscribe_user = function () {
     return false;
 
 }
+
+/*feedback*/
+var customerFeedback = function (el) {
+
+   
+
+    $('#feedback_error').html('');
+
+    var requestData = {}, errMsg = '';
+
+    requestData.name = $('#feedback_name').val();
+
+    requestData.email = $('#feedback_email').val();
+
+    requestData.phone = $('#feedback_phone_no').val();
+
+    requestData.comment = $('#feedback_comment').val();
+
+    console.log('form data', requestData);
+
+    if (!requestData.name && !requestData.phone) {
+
+        errMsg = 'Name and Phone number are required.'
+
+        $('#feedback_error').html(errMsg);
+
+    }
+
+    else if (isNaN(requestData.phone) || requestData.phone.length != 10) {
+
+        errMsg = 'Enter valid phone Number.';
+
+        $('#feedback_error').html(errMsg);
+
+    }
+
+    else if (requestData.email && !validateEmail(requestData.email)) {
+
+        errMsg = 'Enter valid email.';
+
+        $('#feedback_error').html(errMsg);
+
+    }
+
+    else {
+
+        console.log('api calling');
+
+        $.ajax({
+
+            url: 'http://127.0.0.1:5000/ic/feedback',
+
+            type: 'POST',
+
+            contentType: "application/json; charset=utf-8",
+
+            dataType: 'json',
+
+            crossDomain: true,
+
+            data: JSON.stringify(requestData),
+
+            success: function (data) {
+
+                $('#feedback-modal').modal('hide');
+
+                if (data.notification.code == 200) {
+
+                    $('#feedBackSuccess-modal').modal('show');
+
+                }
+
+                else {
+
+                    $('#error-modal').modal('show');
+
+                }
+
+                    $('#feedback_name').val();
+                    $('#feedback_email').val();
+                    $('#feedback_phone_no').val();
+                    $('#feedback_cook_name').val();
+                    $('#feedback_comment').val();
+            },
+
+            error: function (data) {
+
+                if (data.notification.code == 500) {
+
+                    console.log("submission  failed");
+
+                    $('#error-modal').modal('show');
+
+                }
+
+            }
+
+        });
+
+    }
+
+}
+
+
 
 
 
@@ -1092,7 +1297,7 @@ var applyForService = function (el) {
     requestData.customerAddress = $('#service_address').val();
     requestData.customerLandmark = $('#service_landmark').val();
     requestData.customerLandmark = $('#service_alternate_phone_no').val();
-    requestData.customerPreference = $('#customer_prefrences').val();
+    requestData.customerPreference = $('#cook_preferences').val();
     requestData.numberOfMembers = $('#no_of_people').val();
     console.log("form data", requestData);
 
@@ -1183,7 +1388,7 @@ var applyForService = function (el) {
                 $('#service_email').val('');
                 $('#service_phone_no').val('');
                 $('#service_location').val('');
-                $('#customer_prefrences').val('');
+                $('#cook_preferences').val('');
                 $('#no_of_people').val('');
                 $('#service_address').val('');
                 $('#service_landmark').val('');
@@ -1196,3 +1401,4 @@ var applyForService = function (el) {
     }
 
 }
+
