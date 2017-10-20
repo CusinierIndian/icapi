@@ -137,11 +137,16 @@ class FeedbackController(BaseController):
 				if f.isApproved == True:
 					feedbackListInd.append(f.feedback)
 					feedbackListInd.reverse()
+					for fl in feedbackList:
+						if cd.id == fl.get('customerId'):
+							print cd.customerName
+							feedbackList.remove(fl)
+						
 					feedbackList.append({
-						'customerId' : cd.id,
-						'customerName' : cd.customerName,
-						'latestComment' : feedbackListInd[0]
-						})
+							'customerId' : cd.id,
+							'customerName' : cd.customerName,
+							'latestComment' : feedbackListInd[0]
+							})
 		from transformer.transformers import Transformers
 		return Transformers().transformGetFeedback(feedbackList, Constants.STATUS_SUCCESS, Constants.SUCCESS_CODE)
 
