@@ -61,6 +61,7 @@ def getCookDetails():
 	queryParams = request.args
 	from controllers.controllers import AdminController
 	return jsonify(AdminController().getCookDetails(queryParams))
+ 
 
 
 

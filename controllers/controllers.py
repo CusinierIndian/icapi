@@ -134,7 +134,8 @@ class FeedbackController(BaseController):
 		for cd in response:
 			feedbackListInd = []
 			for f in cd.feedback:
-				feedbackListInd.append(f.feedback)
+				if f.isApproved == True:
+					feedbackListInd.append(f.feedback)
 			feedbackListInd.reverse()
 			feedbackList.append({
 				'customerId' : cd.id,
@@ -143,6 +144,11 @@ class FeedbackController(BaseController):
 				})
 		from transformer.transformers import Transformers
 		return Transformers().transformGetFeedback(feedbackList, Constants.STATUS_SUCCESS, Constants.SUCCESS_CODE)
+
+	#method to approve feedback
+	def approveFeedback(self, approval):
+		feedbackId = approval.get('feedbackId')
+		return self.dbConnection.approveFeedback(feedbackId)
 
 #Authentication Controller
 class AuthenticationController(BaseController):

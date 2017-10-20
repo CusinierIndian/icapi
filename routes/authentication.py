@@ -42,7 +42,6 @@ def verifyEmail(token):
 	except Exception as e:
 		return e.message
 	else:
-		print verifiedEmail
 		from controllers.controllers import AuthenticationController
 		return jsonify(AuthenticationController().verifyEmail(verifiedEmail))
 

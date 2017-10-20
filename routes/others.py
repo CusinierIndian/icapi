@@ -1,9 +1,13 @@
-from flask import Flask, Blueprint, request, jsonify, render_template
+from flask import Flask, Blueprint, request, jsonify, render_template, flash
 from transformer.transformers import ExceptionTransformers
 from constants.constants import Constants
 from werkzeug.exceptions import BadRequest
+from flask_mail import Mail, Message
+from itsdangerous import URLSafeTimedSerializer, BadSignature, BadData
+from config import app
 
 others = Blueprint('others', __name__)
+safeTimed = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
 @others.route('/subscribe', methods=['POST'])
 def subscribe():
@@ -57,13 +61,45 @@ def customerFeedback():
 		return jsonify(ExceptionTransformers().transformException(Constants.INVALID_INPUT, Constants.INVALID_JSON, Constants.STATUS_FAILED))
 	else: 
 		from controllers.controllers import FeedbackController
-		return jsonify(FeedbackController().customerFeedBack(feedback))
+		feedbackResponse = FeedbackController().customerFeedBack(feedback)
+		if feedbackResponse and feedbackResponse.get('notification').get('status') == 'Success':
+			mail = Mail(app)
+			with  app.app_context():
+				with mail.connect() as conn:
+					feedback = feedbackResponse.get('data').get('comments')[0].get('feedback')
+					customerName = feedbackResponse.get('data').get('customerName')
+					temp = {
+						'feedbackId' : feedbackResponse.get('data').get('comments')[0].get('feedbackId')
+					}
+					token = safeTimed.dumps(temp)
+					link = 'http://127.0.0.1:5000/ic/approve/'+token
+					modifyLink = 'http://127.0.0.1:5000/ic/modify/'+token
+					msg = Message(subject='Feedback Approval', recipients=['souvik2230@gmail.com'], sender='indiancuisinier@gmail.com')
+					msg.html = render_template('test.html', feedback = feedback, token = token, link = link, modifyLink = modifyLink, customerName = customerName)
+					conn.send(msg)
+		return jsonify(feedbackResponse)
+
+
 
 #Retrieving feedback from customer
 @others.route('/getfeedback', methods=['GET'])
 def retreiveFeedback():
 	from controllers.controllers import FeedbackController
 	return jsonify(FeedbackController().getFeedbacks())	
+
+
+@others.route('/approve/<token>')
+def approveFeedback(token):
+	try:
+		approval = safeTimed.loads(token)
+	except BadSignature as badRequest:
+		return jsonify({'message': 'Invalid token'})
+	else:
+		from controllers.controllers import FeedbackController
+		response = FeedbackController().approveFeedback(approval)
+		if response:
+			flash('Feedback is approved')
+		return jsonify(response)
 
 
 

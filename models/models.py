@@ -137,14 +137,16 @@ class CustomerDetailsTemp(Base):
 class Feedback(Base):
 	__tablename__ = 'feedback'
 
-	def __init__(self, id, customerDetailsId, feedback):
+	def __init__(self, id, customerDetailsId, feedback, isApproved=False):
 		self.id = id
 		self.customerDetailsId = customerDetailsId
 		self.feedback = feedback
+		self.isApproved = isApproved
 
 	id = Column(String(100), primary_key=True, nullable=False)
 	customerDetailsId = Column(ForeignKey(u'customer_details_temp.id'), nullable=False)
 	feedback = Column(String(1000), nullable=False)
+	isApproved = Column(Boolean, nullable=False)
 	customerDetails = relationship('CustomerDetailsTemp', backref=db.backref('feedback', lazy='dynamic'))
 
 class AdminUser(Base):
@@ -162,8 +164,9 @@ class AdminUser(Base):
 	name = Column(String(255), nullable=False)
 	email = Column(String(255), unique=True, nullable=False)
 	password = Column(String(50), nullable=False)
-	isMaster = Column(Boolean, nullable=False)
-	isEmailVerified = Column(Boolean, nullable=False)
+	isMaster = Column(Boolean, nullable=False, default=False)
+	isEmailVerified = Column(Boolean, nullable=False, default=False)
+
 
 
 

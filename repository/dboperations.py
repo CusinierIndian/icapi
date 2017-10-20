@@ -186,6 +186,17 @@ class DBOperations:
 		else:
 			return response.isEmailVerified
 
+	#approve feedback
+	def approveFeedback(self, feedbackId):
+		try:
+			response = Feedback.query.filter_by(id=feedbackId).first()
+			response.isApproved = True
+			self.session.commit()
+		except Exception as e:
+			return e.message
+		else:
+			return 'feedback approved'
+
 
 
 
