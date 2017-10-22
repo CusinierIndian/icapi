@@ -112,6 +112,8 @@ a.nav-link:hover {
 .card-wraper{
 	margin:10px 0px;
 }
+
+
 .effect{
    -webkit-animation-duration: 1s;
   /*-webkit-animation-delay: 2s;*/
@@ -335,7 +337,9 @@ label{
 }		
 .modal-close-icon{		
 	font-size:2rem;		
-}		
+}
+
+
 .subs-header{		
 	font-size: 2rem;		
 	text-align:center;		
@@ -463,6 +467,3 @@ label{
 	color: #f7f8fc !important;
 }
 
-hr.style1{
-  border-top: 1px solid #8c8b8b;
-}

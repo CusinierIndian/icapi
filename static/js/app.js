@@ -4,12 +4,6 @@ $(document).ready(function () {
 
     console.log("page is loaded");
 
-
-
-
-
-
-
     var countDownDate = new Date("Nov 1, 2017 11:46:00").getTime();
 
     var x = setInterval(function () {
@@ -146,14 +140,8 @@ $(document).ready(function () {
 
 
 
-    var contactNamePattern = /^([a-zA-Z]){2,30}$/;
-
-
-
+    var contactNamePattern = /^[a-zA-Z][a-zA-Z ]+$/;
     var msg;
-
-
-
     $('#contact_name').keyup(function () {
 
 
@@ -168,18 +156,10 @@ $(document).ready(function () {
 
         if (data.match(contactNamePattern)) {
 
-
-
-
-
-
+            if(data.length>1){
 
             $(this).parent('div').removeClass('has-warning').addClass('has-success');
-
-
-
-
-
+        }
 
 
         }
@@ -191,6 +171,8 @@ $(document).ready(function () {
             msg = "Name field cannot be empty";
 
         }
+
+        
 
 
 
@@ -280,47 +262,19 @@ $(document).ready(function () {
 
     $('#contact_phone_no').keyup(function (e) {
 
-
-
         var data = $('#contact_phone_no').val().trim();
-
-
 
         console.log(data);
 
-
-
         if ((isNaN(data))) {
 
-
-
             $(this).parent('div').removeClass('has-success').addClass('has-warning');
-
-
-
             text = "Enter number only";
-
-
-
         }
-
-
-
-        else {
-
-
+         else {
 
             $(this).parent('div').removeClass('has-warning').addClass('has-success');
-
-
-
-
-
-
-
         }
-
-
 
         document.getElementById("cformPhone").innerHTML = text;
 
@@ -386,16 +340,8 @@ var text;
 
 $('#apply_name').keyup(function () {
 
-
-
     var data = $(this).val();
-
-
-
     console.log(data);
-
-
-
     if (data.match(charPattern)) {
         $(this).parent('div').removeClass('has-warning').addClass('has-success');
     }
@@ -530,20 +476,12 @@ $('#sub-email').keyup(function (e) {
 
 
 
-
+//Service house-hold model validation
 
 
 var serviceNamePattern = /^([a-zA-Z]){2,30}$/;
-
-
-
 var msg;
-
-
-
 $('#service_name').keyup(function () {
-
-
 
     var data = $(this).val();
 
@@ -731,9 +669,144 @@ var text;
 
 $('#service_alternate_phone_no').keyup(function (e) {
 
-
-
     var data = $('#service_alternate_phone_no').val().trim();
+    console.log(data);
+
+    if ((isNaN(data))) {
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        text = "Enter number only";
+    }
+
+    else {
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+    document.getElementById("service_alternate_phone").innerHTML = text;
+});
+
+var msg;
+$('#service_address').keyup(function (e) {
+    var data = $(this).val();
+    console.log(data);
+    if (data == "") {
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+         msg = "Address Field cannot be Empty";
+    }
+    else
+    {
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+    }
+    
+       document.getElementById("service_ad").innerHTML = msg;
+    
+});
+
+
+
+//Service ocassion model validation
+var serviceNamePattern = /^([a-zA-Z]){2,30}$/;
+var msg;
+$('#service_ocassion_name').keyup(function () {
+
+    var data = $(this).val();
+
+
+
+    console.log(data);
+
+
+
+    if (data.match(serviceNamePattern)) {
+
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+
+    else if (data == "") {
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+        msg = "Name field cannot be empty";
+
+    }
+
+    else {
+
+
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+        msg = "Enter characters only";
+
+    }
+
+    document.getElementById("service_ocassion_nm").innerHTML = msg;
+
+
+
+});
+
+
+
+
+
+
+
+var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+
+
+$('#service_ocassion_email').keyup(function (e) {
+
+
+
+    var data = $('#service_ocassion_email').val().trim();
+
+
+
+    console.log(data);
+
+
+
+    if (data.match(pattern)) {
+
+
+
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+
+
+    }
+
+
+
+    else {
+
+
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+
+
+    }
+
+
+
+});
+
+
+
+
+
+var text;
+
+$('#service_ocassion_phone_no').keyup(function (e) {
+
+
+
+    var data = $('#service_ocassion_phone_no').val().trim();
 
 
 
@@ -767,44 +840,103 @@ $('#service_alternate_phone_no').keyup(function (e) {
 
 
 
-    document.getElementById("service_alternate_phone").innerHTML = text;
+    document.getElementById("service_ocassion_phone").innerHTML = text;
 
 
 
 });
 
 
+var text;
+
+$('#service_ocassion_pincode').keyup(function (e) {
 
 
-$('#service_address').keyup(function () {
 
-
-
-    var data = $(this).val();
+    var data = $('#service_ocassion_pincode').val().trim();
 
 
 
     console.log(data);
 
-    if (data == "") {
+
+
+    if ((isNaN(data))) {
+
+
 
         $(this).parent('div').removeClass('has-success').addClass('has-warning');
+
+
+
+        text = "Enter number only";
 
 
 
     }
 
 
+
+    else {
+
+
+
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+
+
+
+    document.getElementById("service_ocassion_pin").innerHTML = text;
+
+
+
+});
+var text;
+
+$('#service_ocassion_alternate_phone_no').keyup(function (e) {
+
+    var data = $('#service_ocassion_alternate_phone_no').val().trim();
+    console.log(data);
+
+    if ((isNaN(data))) {
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        text = "Enter number only";
+    }
+
+    else {
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+
+    }
+    document.getElementById("service_ocassion_alternate_phone").innerHTML = text;
 });
 
 
 
 
 
+var msg;
+$('#service_ocassion_address').keyup(function (e) {
+    var data = $(this).val();
+    console.log(data);
+    if (data == "") {
+
+        $(this).parent('div').removeClass('has-success').addClass('has-warning');
+         msg = "Address Field cannot be Empty";
+    }
+    else
+    {
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+    }
+    
+       document.getElementById("service_ocassion_ad").innerHTML = msg;
+    
+});
+
+//----------------
+
 var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-
-
-
 var validateEmail = function (data) {
 
     console.log('validate email', data);
@@ -812,6 +944,9 @@ var validateEmail = function (data) {
     return data.match(emailPattern) ? true : false;
 
 }
+
+
+
 /*validation for feedback */
 var feedbackNamePattern = /^([a-zA-Z]){2,30}$/;
 var msg;
@@ -901,14 +1036,22 @@ $('#feedback_cook_name').keyup(function () {
     document.getElementById("cook_nm").innerHTML = msg;
 });
 
-
+var msg;
 $('#feedback_comment').keyup(function () {
     var data = $(this).val();
     console.log(data);
     if (data == "") {
 
         $(this).parent('div').removeClass('has-success').addClass('has-warning');
+         msg = "Comment field cannot be empty!";
     }
+    else
+    {
+        $(this).parent('div').removeClass('has-warning').addClass('has-success');
+    }
+    
+       document.getElementById("feedback_cmnt").innerHTML = msg;
+    
 });
 
 
@@ -987,17 +1130,18 @@ var customerFeedback = function (el) {
 
     var requestData = {}, errMsg = '';
 
-    requestData.name = $('#feedback_name').val();
+    requestData.customerName = $('#feedback_name').val();
 
-    requestData.email = $('#feedback_email').val();
+    requestData.customerEmail = $('#feedback_email').val();
 
-    requestData.phone = $('#feedback_phone_no').val();
+    requestData.customerPhone = $('#feedback_phone_no').val();
 
-    requestData.comment = $('#feedback_comment').val();
+    requestData.feedback = $('#feedback_comment').val();
+    requestData.cookName = $('#feedback_cook_name').val();
 
     console.log('form data', requestData);
 
-    if (!requestData.name && !requestData.phone) {
+    if (!requestData.customerName && !requestData.customerPhone) {
 
         errMsg = 'Name and Phone number are required.'
 
@@ -1005,7 +1149,7 @@ var customerFeedback = function (el) {
 
     }
 
-    else if (isNaN(requestData.phone) || requestData.phone.length != 10) {
+    else if (isNaN(requestData.customerPhone) || requestData.customerPhone.length != 10) {
 
         errMsg = 'Enter valid phone Number.';
 
@@ -1013,13 +1157,14 @@ var customerFeedback = function (el) {
 
     }
 
-    else if (requestData.email && !validateEmail(requestData.email)) {
+    else if (requestData.customerEmail && !validateEmail(requestData.customerEmail)) {
 
         errMsg = 'Enter valid email.';
 
         $('#feedback_error').html(errMsg);
 
     }
+    
 
     else {
 
@@ -1317,9 +1462,9 @@ var applyForService = function (el) {
 
     }
 
-    else if (requestData.customerPincode != 6) {
+    else if (isNaN(requestData.customerPhone) || requestData.customerPincode.length != 6) {
 
-        errMsg = 'Enter valid No of people';
+        errMsg = 'Enter valid pincode';
 
         $('#service_error').html(errMsg);
 
@@ -1368,7 +1513,7 @@ var applyForService = function (el) {
 
             success: function (data) {
 
-                $('#service-modal').modal('hide');
+                $('#service-household-modal').modal('hide');
 
                 if (data.notification.code == 200) {
 
@@ -1393,7 +1538,7 @@ var applyForService = function (el) {
                 $('#service_address').val('');
                 $('#service_landmark').val('');
                 $('#service_pincode').val('');
-                $('#service_alternate_phone_no').val();
+                $('#service_alternate_phone_no').val('');
             }
 
         });
@@ -1401,4 +1546,128 @@ var applyForService = function (el) {
     }
 
 }
+
+var applyForOccasionalService = function (el) {
+
+    console.log("apply for service", el);
+
+    $('#service_error').html('');
+
+    var requestData = {}, errMsg = '';
+
+    requestData.customerName = $('#service_ocassion_name').val();
+    requestData.customerEmail = $('#service_ocassion_email').val();
+    requestData.customerPhone = $('#service_ocassion_phone_no').val();
+    requestData.customerPincode = $('#service_ocassion_pincode').val();
+    requestData.customerLocation = $('#service_ocassion_location').val();
+    requestData.customerCity = $('#service_ocassion_city').val();
+    requestData.customerState = $('#service_ocassion_state').val();
+    requestData.customerAddress = $('#service_ocassion_address').val();
+    requestData.customerLandmark = $('#service_ocassion_landmark').val();
+    requestData.customerLandmark = $('#service_ocassion_alternate_phone_no').val();
+    requestData.customerPreference = $('#service_ocassion_cook_preferences').val();
+    requestData.numberOfMembers = $('#service_ocassion_no_of_people').val();
+    console.log("form data", requestData);
+
+    if (!requestData.customerName && !requestData.customerEmail && !requestData.customerPhone && !requestData.numberOfMembers && !requestData.customerPincode && !requestData.customerAddress) {
+
+        errMsg = 'All fields are required.';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (isNaN(requestData.customerPhone) || requestData.customerPhone.length != 10) {
+
+        errMsg = 'Enter valid phone Number.';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (isNaN(requestData.customerPhone) || requestData.customerPincode.length != 6) {
+
+        errMsg = 'Enter valid pincode';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (requestData.customerAddress == "") {
+        errMsg = 'Enter Address';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (!validateEmail(requestData.customerEmail)) {
+
+        errMsg = 'Enter valid Email Id.';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+    else if (requestData.numberOfMembers < 1) {
+
+        errMsg = 'Enter valid number of people';
+
+        $('#service_error').html(errMsg);
+
+    }
+
+
+
+    else {
+
+        $.ajax({
+
+            url: 'http://127.0.0.1:5000/ic/cookbooking',
+
+            type: 'POST',
+
+            contentType: "application/json; charset=utf-8",
+
+            datatype: 'json',
+
+            crossDomain: true,
+
+            data: JSON.stringify(requestData),
+
+            success: function (data) {
+
+                $('#service-occasion-modal').modal('hide');
+
+                if (data.notification.code == 200) {
+
+                    console.log("apply successfull")
+
+                    $('#carrer-modal').modal('show');
+
+                }
+
+                else {
+
+                    $('#error-modal').modal('show');
+
+                }
+
+                $('#service_ocassion_name').val('');
+                $('#service_ocassion_email').val('');
+                $('#service_ocassion_pin').val('');
+                $('#service_ocassion_phone_no').val('') 
+                $('#service_ocassion_address').val('');
+                $('#service_ocassion_landmark').val('');
+                $('#service_ocassion_pincode').val('');
+                $('#service_ocassion_alternate_phone').val('');
+                $('#service_ocassion_no_of_people').val('');
+            }
+
+        });
+
+    }
+
+}
+
+
 

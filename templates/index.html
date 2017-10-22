@@ -151,7 +151,7 @@
 
         </div>
 
-        <div class="row h-100">
+        <div class="row h-100 ">
 
           <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
 
@@ -293,7 +293,7 @@
 
               <div class="service-card-footer">
 
-                <button class="btn btn-success" data-toggle="modal" data-target="#service-modal">Book Now</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#service-household-modal">Book Now</button>
 
               </div>
 
@@ -319,7 +319,7 @@
 
               <div class="service-card-footer">
 
-                <button class="btn btn-success" data-toggle="modal" data-target="#service-modal">Book Now</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#service-occasion-modal">Book Now</button>
 
               </div>
 
@@ -389,25 +389,12 @@
 
         </div>
 
-        <div class="row h-100">
+        <div id="rev" class="row h-100  ">
 
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+          </div> 
 
-            <div class="card h-100">
 
-              <div class="card-body">
-
-                <h5 id="custname0" class="card-title"></h5>
-                <hr  class="style1">
-                <p  id="comment0" class="card-text"></p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
+       <!--   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
 
             <div class="card h-100">
 
@@ -453,75 +440,50 @@
 
             </div>
 
-          </div>
+          </div>-->
 
 <!--
           <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
-
             <div class="card h-100">
-
               <div class="card-body">
-
                 <h5 class="card-title">Customer Name</h5>
                 <hr  class="style1">
-
                 <p class="card-text">Affordable and transparent - are the two keywords that define our economical and pocket friendly prices for
                   the cook services. Indian Cuisinier provides the best services at the minimal rates which are both economical
                   and highly transparent in nature.
-
                 </p>
-
               </div>
-
             </div>
-
           </div>
-
           <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
-
             <div class="card h-100">
-
               <div class="card-body">
-
                 <h5 class="card-title">Customer Name</h5>
                 <hr  class="style1">
-
                 <p class="card-text">Indian Cuisinier believes that a healthy life begins with a healthy stomach. We make sure that our cooks
                   serve a healthy meal for you without compromising your taste. Also the neat and groomed appearance of our
                   cooks adds a hygienic ambience to your kitchen.</p>
-
               </div>
-
             </div>
-
           </div>
-
           <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 card-wraper">
-
             <div class="card h-100">
-
               <div class="card-body">
-
                 <h5 class="card-title">Customer Name</h5>
                 <hr  class="style1">
-
                 <p class="card-text">Our prime objective is to provide the best cook service to our customers. Hence, we are committed towards
                   catering to the requirements of our customers. In case the appointed cook becomes unavailable, we assure
                   to provide the same calibre work without compromising your taste. We assure our customers of zero absenteeism.
-
                 </p>
-
               </div>
-
             </div>
-
           </div>-->
 
         </div>
        
        <div class="row justify-content-center">
 
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#feedback-modal">Your Important Feedback!!!</button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#feedback-modal">Post Your Feedback!!!</button>
 
             
 
@@ -573,7 +535,7 @@
 
                 <label for="contactPhone">Phone</label>
 
-                <input type="text" class="form-control form-control-input" id="contact_phone_no" placeholder="Enter phone number..">                <small id="cformPhone" class="form-control-feedback-warning">Minimum
+                <input type="text" class="form-control form-control-input" id="contact_phone_no" maxlength="10" placeholder="Enter phone number..">                <small id="cformPhone" class="form-control-feedback-warning">Minimum
 
                                     10 digit is required</small>
 
@@ -697,7 +659,7 @@
       <div class="form-group">
        <label for="comment">Comment:</label>
       <textarea class="form-control" rows="4" id="feedback_comment"></textarea>
-      <small class="form-control-feedback-warning">Comment field cannot be empty!</small>
+      <small  id="feedback_cmnt"class="form-control-feedback-warning">Comment field cannot be empty!</small>
       </div>
       <div id="feedback_error"></div>
 
@@ -762,7 +724,7 @@
 
               <input class="form-control form-control-input" type="text" id="apply_name" placeholder="Name" required="true" />
 
-              <small id="name" class="form-control-feedback-warning">Name field cannot be empty!</small>
+              <small id="apply_nm" class="form-control-feedback-warning">Name field cannot be empty!</small>
 
             </div>
 
@@ -810,7 +772,7 @@
 
     <!-- Modal for service in Indian Cuisinier -->
 
-    <div class="modal fade" id="service-modal" tabindex="-1" role="dialog" aria-labelledby="service-modal" aria-hidden="true">
+   <div class="modal fade" id="service-household-modal" tabindex="-1" role="dialog" aria-labelledby="service-household-modal" aria-hidden="true">
 
       <div class="modal-dialog" role="document">
 
@@ -893,6 +855,7 @@
                                     <option value="kondapur">Kondapur</option>
 
                                     <option value="Madapur">Madapur</option>
+                                    <option value="Miyapur">Miyapur</option>
 
                                 </select>
 
@@ -930,9 +893,9 @@
 
               <input class="form-control form-control-input" type="text" id="service_address" required="true"></input>
 
-              <small id="service_ad" class="form-control-feedback-warning">
+              <small  id="service_ad"class="form-control-feedback-warning"> Address Field cannot be Empty</small>
 
-                                Address Field cannot be Empty</small>
+                               
 
             </div>
 
@@ -969,14 +932,11 @@
 
               <label for="service_email" class="form-control-label">Email:</label>
 
-              <input class="form-control form-control-input" type="email" id="service_email" placeholder="abc@gmail.com" required="true"
-              />
+              <input class="form-control form-control-input" type="email" id="service_email" placeholder="abc@gmail.com" required="true"/>
 
               <small class="form-control-feedback-warning">Enter valid email!</small>
 
               <small id="serviceEmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-
-
 
             </div>
 
@@ -1000,45 +960,13 @@
 
                 <label for="no_of_people" class="form-control-label">No of People:</label>
 
-                <input class="form-control form-control-input" type="number" id="no_of_people" required="true" />
+                <input class="form-control form-control-input" type="number" id="no_of_people" min="1" required="true" />
 
               </div>
 
             </div>
 
-            <!-- <div class="form-group row padding-top-15">
-
-                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 no-padding">
-
-                                  <label class="form-check-label">
-
-                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInBothTime" value="true" checked> Required in both time
-
-                                  </label>
-
-                                </div>
-
-                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 people-input">
-
-                                  <label class="form-check-label">
-
-                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInMorning" value="false"> Required in Morning
-
-                                  </label>
-
-                                </div>
-
-                                <div class="form-check col-lg-4 col-xl-4 col-md-4 col-sm-12 col-xs-12 people-input">
-
-                                  <label class="form-check-label">
-
-                                    <input class="form-check-input" type="radio" name="cooktimeing" id="requiredInEvening" value="false"> Required in Evening
-
-                                  </label>
-
-                                </div>
-
-                            </div> -->
+            
 
             <div id="service_error"></div>
 
@@ -1051,6 +979,225 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
             <button type="submit" class="btn btn-info" onclick="applyForService(this)">Book</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+ <!-- Modal for  ocassion service in Indian Cuisinier -->
+    <div class="modal fade" id="service-occasion-modal" tabindex="-1" role="dialog" aria-labelledby="service-occasion-modal" aria-hidden="
+    true">
+
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+
+            <h5 class="modal-title" id="exampleModalLabel">Provide Your Details</h5>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                            <span aria-hidden="true">&times;</span>
+
+                        </button>
+
+          </div>
+
+          <div class="modal-body">
+
+            <div class="form-group row">
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                <label for="service_ocassion_name" class="form-control-label">Name:</label>
+
+                <input class="form-control form-control-input" type="text" id="service_ocassion_name" placeholder="Name" required="true" />
+
+                <small id="service_ocassion_nm" class="form-control-feedback-warning">Name field cannot be empty!</small>
+
+              </div>
+
+
+
+
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                <label for="service_ocassion_phone_no" class="form-control-label">Phone No:</label>
+
+                <input class="form-control form-control-input" type="text" id="service_ocassion_phone_no" maxlength="10" placeholder="1234567890"
+                  required="true" />
+
+                <small id="service_ocassion_phone" class="form-control-feedback-warning">Minimum
+
+                                    10 digit is required</small>
+
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                <label for="service_ocassion_pincode" class="form-control-label">Pincode:</label>
+
+                <input class="form-control form-control-input" type="text" id="service_ocassion_pincode" placeholder="Pincode" maxlength="6" required="true"
+                />
+
+                <small id="service_ocassion_pin" class="form-control-feedback-warning">Minimum
+
+                                    6 digit is required</small>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                <label for="service_ocassion_location" class="form-control-label">Locality:</label>
+
+                <select class="form-control" id="service_ocassion_location">
+
+                                    <option value="gachibowli" selected>Gachibowli</option>
+                                    <option value="kondapur">Kondapur</option>
+                                    <option value="Madapur">Madhapur</option>
+                                    <option value="Lingampally">Lingampally</option>
+                                    <option value="Mehdipatanam">Mehdipatanam</option>
+                                    <option value="Tolichowki">Tolichowki</option>
+                                     <option value="Miyapur">Miyapur</option>
+
+                                </select>
+
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                <label for="service_ocassion_city" class="form-control-label">City:</label>
+
+                <input class="form-control form-control-input" type="text" id="service_ocassion_city" value="Hyderabad" readonly required="true" />
+
+              </div>
+
+
+
+
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                <label for="service_ocassion_state" class="form-control-label">State:</label>
+
+                <input class="form-control form-control-input" type="text" id="service_ocassion_state"  value="Telengana" readonly required="true"></input>
+
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+
+              <label for="service_ocassion_address">Address(Area and Street):</label>
+
+              <input class="form-control form-control-input" type="text" id="service_ocassion_address" required="true"></input>
+
+              <small  id="service_ocassion_ad" class="form-control-feedback-warning">Address Field cannot be Empty</small>
+
+            </div>
+
+            <div class="form-group row">
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                <label for="service_ocassion_landmark" class="form-control-label">Landmark(Optional):</label>
+
+                <input class="form-control form-control-input" type="text" id="service_ocassion_landmark" placeholder="Landmark" required="true" />
+
+              </div>
+
+
+
+
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                <label for="service_ocassion_alternate_phone_no" class="form-control-label">Alternate Phone No(Optional):</label>
+
+                <input class="form-control form-control-input" type="text" id="service_ocassion_alternate_phone_no" maxlength="10" placeholder="1234567890"
+                  required="true" />
+                <small id="service_ocassion_alternate_phone" class="form-control-feedback-warning"> </small>
+
+
+              </div>
+
+            </div>
+
+            <div class="form-group">
+
+
+
+              <label for="service_ocassion_email" class="form-control-label">Email:</label>
+
+              <input class="form-control form-control-input" type="email" id="service_ocassion_email" placeholder="abc@gmail.com" required="true"/>
+
+              <small class="form-control-feedback-warning">Enter valid email!</small>
+
+              <small id="serviceEmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+
+
+            </div>
+
+            <div class="form-group row">
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                <label for="service_ocassion_cook_preferences" class="form-control-label">Cook Prefrences:</label>
+
+                <select class="form-control" id="service_ocassion_cook_preferences">
+
+                                        <option value="North Indian" selected>North Indian</option>
+
+                                        <option value="South Indian">South Indian</option>
+
+                                    </select>
+
+              </div>
+
+              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 people-input">
+
+                <label for=" service_ocassion_no_of_people" class="form-control-label">No of People:</label>
+
+                <input class="form-control form-control-input" type="number" id="service_ocassion_no_of_people" min="1" required="true" />
+
+              </div>
+
+            </div>
+
+
+
+            <div id="service_error"></div>
+
+          </div>
+
+          <div class="modal-footer">
+
+            <div id="apply_error" class="pull-left"></div>
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+            <button type="submit" class="btn btn-info" onclick="applyForOccasionalService(this)">Book</button>
 
           </div>
 
@@ -1250,86 +1397,78 @@
 
     <script src="/static/js/jquery.inputfit.js"></script>
 
-
-
-
-
-
-
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0SDFw8GylrVTzbBw8lcgCaFpan2koddA&callback=initMap"></script>
 
     <script type="text/javascript">
       function initMap() {
-
         var locationRio = { lat: 17.441603, lng: 78.365077 };
-
         var map = new google.maps.Map(document.getElementById('map'), {
-
           zoom: 13,
-
           center: locationRio,
-
           gestureHandling: 'cooperative'
-
         });
-
         var marker = new google.maps.Marker({
-
           position: locationRio,
-
           map: map,
-
           title: 'Indian Cuisinier'
-
         });
-
       }
     </script>
 
      </script>
 
  <script>
-
     $.ajax({
-
             url: ' http://127.0.0.1:5000/ic/getfeedback',
-
             type: 'GET',
-
             contentType: "application/json; charset=utf-8",
-
             dataType: 'json',
-
             crossDomain: true,
-
          
-
-            success: function (data) {
+                       success: function (data) {
 
 if (data.notification.code == 200)
 {
- 
-  $.each(data.data, function(index, element) {
 
-    console.log(index);
+ $.each(data.data, function(index, element) {
+  console.log(data.data);
+ // console.log(data.data.length);
 
-     $('#custname'+index).append( element.customerName);
-     $('#comment'+index).append( element.latestComment);
+
+
+ $('#rev').append(
+
+  $('<div/>')
+
+    .addClass("col-xl-3 col-lg-3 col-md-6 col-sm-12 ").append(
+    $('<div/>').addClass("col-xs-12 card h-100 card-body")
+    .append( $('<h5/>').attr("id", "custname").addClass("card-title").append(data.data[index].customerName))
+    .append($('<hr/>'))
+    .append( $('<p/>').attr("id", "comment").addClass("card-text").append(data.data[index].latestComment))
+
+  )   
+);   
+
+               
+
+return ( index != 3);
 
 });
 
- }
-  }
+}
+else {
 
+                    $('#error-modal').modal('show');
+
+                }
+
+}
   });
-
 </script>
 
     <script>
       $(function () {
-
         $('#subscribe_user_email').inputfit();
-
       })
     </script>
   </div>
@@ -1339,3 +1478,4 @@ if (data.notification.code == 200)
 
 
 </html>
+

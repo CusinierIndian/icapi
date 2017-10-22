@@ -74,7 +74,7 @@ def customerFeedback():
 					token = safeTimed.dumps(temp)
 					link = 'http://127.0.0.1:5000/ic/approve/'+token
 					modifyLink = 'http://127.0.0.1:5000/ic/modify/'+token
-					msg = Message(subject='Feedback Approval', recipients=['souvik2230@gmail.com'], sender='indiancuisinier@gmail.com')
+					msg = Message(subject='Feedback Approval', recipients=['vin13.rai@gmail.com'], sender='indiancuisinier@gmail.com')
 					msg.html = render_template('test.html', feedback = feedback, token = token, link = link, modifyLink = modifyLink, customerName = customerName)
 					conn.send(msg)
 		return jsonify(feedbackResponse)
