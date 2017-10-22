@@ -11,3 +11,7 @@ class Constants:
 	BASE_ID_COOK = 100000
 	INTEGRITY_ERROR = "User already exists"
 	INTEGRITY_ERROR_CODE = 'ic_500'
+	NO_USER_FOUND = 'ic_404'
+	USER_NOT_REGISTER = 'Not a registered user'
+	INVALID_PASSWORD_CODE = 401
+	INVALID_PASSWORD = 'Invalid password'

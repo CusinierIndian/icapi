@@ -207,7 +207,25 @@ class DBOperations:
 		except Exception as e:
 			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
 		else:
-			return 'The feedback was modofied'
+			return 'The feedback was modified'
+
+	#login
+	def login(self,model, email, password):
+		try:
+			response = model.query.filter_by(email=email).first()
+			if response:
+				if response.password == password:
+					return self.transformer.transformUser(response, Constants.STATUS_SUCCESS,Constants.SUCCESS_CODE)
+				else:
+					return self.exceptionTransformer.transformException(Constants.INVALID_PASSWORD_CODE, Constants.INVALID_PASSWORD, Constants.STATUS_FAILED)
+
+			else:
+				return self.exceptionTransformer.transformException(Constants.NO_USER_FOUND, Constants.USER_NOT_REGISTER, Constants.STATUS_FAILED)
+		except Exception as e:
+			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
+
+
+
 
 
 

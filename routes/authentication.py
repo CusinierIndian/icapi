@@ -2,6 +2,8 @@ from flask import Blueprint, request, jsonify
 from werkzeug.exceptions import BadRequest
 from flask_mail import Mail, Message
 from itsdangerous import URLSafeTimedSerializer
+from transformer.transformers import ExceptionTransformers
+from constants.constants import Constants
 from config import app
 
 authentication = Blueprint('authentication', __name__)
@@ -47,8 +49,15 @@ def verifyEmail(token):
 
 
 #login 
-@authentication.route('login')
+@authentication.route('/login', methods=['POST'])
 def login():
+	try:
+		loginUser = request.get_json()
+	except BadRequest as badRequest:
+		return jsonify(ExceptionTransformers().transformExceptionSubcribedUser(Constants.INVALID_INPUT, str(e), Constants.STATUS_FAILED))
+	else:
+		from controllers.controllers import AuthenticationController
+		return jsonify(AuthenticationController().login(loginUser))
 	
 
 

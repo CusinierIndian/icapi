@@ -158,6 +158,21 @@ class Transformers:
 			}
 		}
 
+	def transformUser(self, model, status, code):
+		return {
+			'data' : {
+				'id' : model.id,
+				'name' : model.name,
+				'email' : model.email,
+				'isMaster' : model.isMaster,
+				'isEmailVerified' : model.isEmailVerified
+			},
+			'notification' : {
+				'status' : status,
+				'code' : code
+			}
+		}
+
 
 
 class ExceptionTransformers:

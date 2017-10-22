@@ -3,6 +3,9 @@ from constants.constants import Constants
 from transformer.transformers import ExceptionTransformers
 from repository.dboperations import DBOperations
 from utility.utilities import validateEmail, generateUniqueId
+from config import app
+import jwt
+
 
 
 #Subcription controller
@@ -181,6 +184,18 @@ class AuthenticationController(BaseController):
 		if(userType == 'admin'):
 			from models.models import AdminUser
 			return self.dbConnection.verifyEmail(AdminUser, verifiedEmail.get('id'))
+
+	#method to login
+	def login(self, loginUser):
+		email = loginUser.get('email')
+		password = loginUser.get('password')
+		userType = loginUser.get('user')
+		if userType == 'admin':
+			from models.models import AdminUser
+			response = self.dbConnection.login(AdminUser,email, password)
+			if(response.get('notification').get('status') == 'Success'):
+				jwt_encoded = jwt.encode(response, app.config['SECRET_KEY'], algorithm='HS256')
+				return {'access-token' : jwt_encoded}
 
 
 
