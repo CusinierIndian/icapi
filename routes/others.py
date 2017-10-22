@@ -5,6 +5,7 @@ from werkzeug.exceptions import BadRequest
 from flask_mail import Mail, Message
 from itsdangerous import URLSafeTimedSerializer, BadSignature, BadData
 from config import app
+from decorators.decorators import async
 
 others = Blueprint('others', __name__)
 safeTimed = URLSafeTimedSerializer(app.config['SECRET_KEY'])
@@ -62,21 +63,7 @@ def customerFeedback():
 	else: 
 		from controllers.controllers import FeedbackController
 		feedbackResponse = FeedbackController().customerFeedBack(feedback)
-		if feedbackResponse and feedbackResponse.get('notification').get('status') == 'Success':
-			mail = Mail(app)
-			with  app.app_context():
-				with mail.connect() as conn:
-					feedback = feedbackResponse.get('data').get('comments')[0].get('feedback')
-					customerName = feedbackResponse.get('data').get('customerName')
-					temp = {
-						'feedbackId' : feedbackResponse.get('data').get('comments')[0].get('feedbackId')
-					}
-					token = safeTimed.dumps(temp)
-					link = 'http://127.0.0.1:5000/ic/approve/'+token
-					modifyLink = 'http://127.0.0.1:5000/ic/modify/'+token
-					msg = Message(subject='Feedback Approval', recipients=['souvik2230@gmail.com'], sender='indiancuisinier@gmail.com')
-					msg.html = render_template('test.html', feedback = feedback, token = token, link = link, modifyLink = modifyLink, customerName = customerName)
-					conn.send(msg)
+		sendMail(feedbackResponse)
 		return jsonify(feedbackResponse)
 
 
@@ -101,6 +88,62 @@ def approveFeedback(token):
 			flash('Feedback is approved')
 		return jsonify(response)
 
+#send mail
+@async
+def sendMail(feedbackResponse):
+	if feedbackResponse and feedbackResponse.get('notification').get('status') == 'Success':
+		mail = Mail(app)
+		with  app.app_context():
+			with mail.connect() as conn:
+				feedback = feedbackResponse.get('data').get('comments')[0].get('feedback')
+				customerName = feedbackResponse.get('data').get('customerName')
+				temp = {
+						'feedbackId' : feedbackResponse.get('data').get('comments')[0].get('feedbackId'),
+						'feedback' : feedback,
+						'customerName' : customerName
+					}
+				token = safeTimed.dumps(temp)
+				link = 'http://127.0.0.1:5000/ic/approve/'+token
+				modifyLink = 'http://127.0.0.1:5000/ic/modify/'+token
+				msg = Message(subject='Feedback Approval', recipients=['souvik2230@gmail.com'], sender='indiancuisinier@gmail.com')
+				msg.html = render_template('test.html', feedback = feedback, token = token, link = link, modifyLink = modifyLink, customerName = customerName)
+				conn.send(msg)
+
+
+#render modify page
+@others.route('/modify/<token>')
+def renderModify(token):
+	try:
+		modifyData = safeTimed.loads(token)
+	except BadSignature as badSignature:
+		return jsonify({'message' : 'Invalid token'})
+	else:
+		feedback = modifyData.get('feedback')
+		customerName = modifyData.get('customerName')
+		link = 'http://127.0.0.1:5000/ic/modifyfeedback/'+token
+		return render_template('modify.html', link = link, feedback = feedback, customerName = customerName)
+
+
+#modify comment
+@others.route('/modifyfeedback/<token>', methods=['POST'])
+def modifyFeedback(token):
+	try:
+		feedbackData = request.form 
+		print feedbackData
+		fromToken = safeTimed.loads(token)
+
+	except BadSignature as badSignature:
+		return jsonify({'message' : 'Invalid token'})
+	except Exception as e:
+		return jsonify({'message' : 'Invalid data'})
+	else:
+		feedbackId = fromToken.get('feedbackId')
+		feedback = feedbackData.get('feedback')
+		from controllers.controllers import FeedbackController
+		response = FeedbackController().modifyFeedback(feedback, feedbackId)
+		return jsonify(response)
+		
+					
 
 
 

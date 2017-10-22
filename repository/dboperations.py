@@ -197,6 +197,19 @@ class DBOperations:
 		else:
 			return 'feedback approved'
 
+	#modify feedback
+	def modifyFeedback(self, feedback, feedbackId):
+		try:
+			response = Feedback.query.filter_by(id=feedbackId).first()
+			response.isApproved = True
+			response.feedback = feedback
+			self.session.commit()
+		except Exception as e:
+			return e. message
+		else:
+			return 'modified feedback'
+
+
 
 
 

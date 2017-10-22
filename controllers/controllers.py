@@ -155,6 +155,10 @@ class FeedbackController(BaseController):
 		feedbackId = approval.get('feedbackId')
 		return self.dbConnection.approveFeedback(feedbackId)
 
+	#method to modify feedback
+	def modifyFeedback(self, feedback, feedbackId):
+		return self.dbConnection.modifyFeedback(feedback, feedbackId)
+
 #Authentication Controller
 class AuthenticationController(BaseController):
 
