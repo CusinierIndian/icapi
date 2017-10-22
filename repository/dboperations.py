@@ -182,7 +182,7 @@ class DBOperations:
 			response.isEmailVerified = True
 			self.session.commit()
 		except Exception as e:
-			e.message	
+			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)	
 		else:
 			return response.isEmailVerified
 
@@ -193,9 +193,9 @@ class DBOperations:
 			response.isApproved = True
 			self.session.commit()
 		except Exception as e:
-			return e.message
+			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
 		else:
-			return 'feedback approved'
+			return 'The feedback has been approved'
 
 	#modify feedback
 	def modifyFeedback(self, feedback, feedbackId):
@@ -205,9 +205,9 @@ class DBOperations:
 			response.feedback = feedback
 			self.session.commit()
 		except Exception as e:
-			return e. message
+			return self.exceptionTransformer.transformException(Constants.DATABASE_ERROR, e.message, Constants.STATUS_FAILED)
 		else:
-			return 'modified feedback'
+			return 'The feedback was modofied'
 
 
 

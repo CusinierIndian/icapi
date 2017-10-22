@@ -45,5 +45,12 @@ def verifyEmail(token):
 		from controllers.controllers import AuthenticationController
 		return jsonify(AuthenticationController().verifyEmail(verifiedEmail))
 
+
+#login 
+@authentication.route('login')
+def login():
+	
+
+
 	
 
