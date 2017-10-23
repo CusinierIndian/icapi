@@ -53,7 +53,7 @@ class Transformers:
 				'customerLocation' : model.customerLocation,
 				'customerPhone' : model.customerPhone,
 				'customerEmail' : model.customerEmail,
-				'customerPreference' : model.cookPreference,
+				'cookPreference' : model.cookPreference,
 				'isRequiredInMorning' : model.isRequiredInMorning,
 				'isRequiredInEvening' : model.isRequiredInEvening,
 				'numberOfMembers' : model.numberOfMembers

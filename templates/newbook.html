@@ -2,6 +2,7 @@
 <html>
 	<body>
 		{% if details.get('notification').get('status') == 'Success'%}
+		{{details.get('data').get('cookPreference')}}
 		<label>Customer Name:- </label><label>{{details.get('data').get('customerName')}}</label><br/>
 		<label>Customer Email:- </label><label>{{details.get('data').get('customerEmail')}}</label><br/>
 		<label>Customer Phone:- </label><label>{{details.get('data').get('customerPhone')}}</label><br/>
