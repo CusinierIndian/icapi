@@ -118,7 +118,7 @@ class TemporaryBooking(Base):
 	customerLocation = Column(String(255), nullable=False)
 	customerPhone = Column(String(15), nullable=False, unique=True)
 	customerEmail = Column(String(50), nullable=False,unique=True)
-	customerPreference = Column(String(30), nullable=False)
+	cookPreference = Column(String(30), nullable=False)
 	isRequiredInMorning = Column(Boolean, nullable=False)
 	isRequiredInEvening = Column(Boolean, nullable=False)
 	numberOfMembers = Column(Integer, nullable=False)
