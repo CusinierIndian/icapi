@@ -72,7 +72,6 @@ def customerFeedback():
 	else: 
 		from controllers.controllers import FeedbackController
 		feedbackResponse = FeedbackController().customerFeedBack(feedback)
-<<<<<<< HEAD
 		if feedbackResponse and feedbackResponse.get('notification').get('status') == 'Success':
 			mail = Mail(app)
 			with  app.app_context():
@@ -88,9 +87,7 @@ def customerFeedback():
 					msg = Message(subject='Feedback Approval', recipients=['souvik2230@gmail.com '], sender='indiancuisinier@gmail.com')
 					msg.html = render_template('test.html', feedback = feedback, token = token, link = link, modifyLink = modifyLink, customerName = customerName)
 					conn.send(msg)
-=======
 		sendMail(feedbackResponse)
->>>>>>> 3395ca56efeec827c38ac984ab666a52803d65db
 		return jsonify(feedbackResponse)
 
 
