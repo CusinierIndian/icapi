@@ -95,7 +95,8 @@ class TemporaryBooking(Base):
 
 	__tablename__ = 'temporary_booking'
 
-	def __init__(self, id, customerName, customerLocation, customerPhone, customerEmail, cookPreference, isRequiredInMorning, isRequiredInEvening, numberOfMembers):
+	def __init__(self, id, customerName, customerLocation, customerPhone, customerEmail, cookPreference
+		, isRequiredInMorning, isRequiredInEvening, numberOfMembers, pincode, city, state, address, alternatePhoneNo):
 		self.id = id
 		self.customerName = customerName
 		self.customerLocation = customerLocation
@@ -105,6 +106,11 @@ class TemporaryBooking(Base):
 		self.isRequiredInMorning = isRequiredInMorning
 		self.isRequiredInEvening = isRequiredInEvening
 		self.numberOfMembers = numberOfMembers
+		self.pincode = pincode
+		self.city = city
+		self.state = state
+		self.address = address
+		self.alternatePhoneNo = alternatePhoneNo
 
 
 	id = Column(String(100) , primary_key=True, nullable=False)
@@ -116,6 +122,11 @@ class TemporaryBooking(Base):
 	isRequiredInMorning = Column(Boolean, nullable=False)
 	isRequiredInEvening = Column(Boolean, nullable=False)
 	numberOfMembers = Column(Integer, nullable=False)
+	pincode = Column(String(10), nullable=False)
+	city = Column(String(30), nullable=False)
+	state = Column(String(30), nullable=False)
+	address = Column(String(500), nullable=False)
+	alternatePhoneNo = Column(String(10))
 
 class CustomerDetailsTemp(Base):
 

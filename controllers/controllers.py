@@ -121,7 +121,9 @@ class BookingController(BaseController):
 			, cookBookingDetails.get('customerLocation'), cookBookingDetails.get('customerPhone')
 			, cookBookingDetails.get('customerEmail'), cookBookingDetails.get('cookPreference')
 			, isRequiredInMorning, isRequiredInEvening
-			, cookBookingDetails.get('numberOfMembers'))
+			, cookBookingDetails.get('numberOfMembers'), cookBookingDetails.get('pincode')
+			, cookBookingDetails.get('city'), cookBookingDetails.get('state'), cookBookingDetails.get('address')
+			, cookBookingDetails.get('alternatePhoneNo'))
 
 		return self.dbConnection.bookACook(bookACook)	
 
