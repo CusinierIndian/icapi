@@ -1435,18 +1435,18 @@ var applyForService = function (el) {
     requestData.customerName = $('#service_name').val();
     requestData.customerEmail = $('#service_email').val();
     requestData.customerPhone = $('#service_phone_no').val();
-    requestData.customerPincode = $('#service_pincode').val();
+    requestData.pincode = $('#service_pincode').val();
     requestData.customerLocation = $('#service_location').val();
-    requestData.customerCity = $('#service_city').val();
-    requestData.customerState = $('#service_state').val();
-    requestData.customerAddress = $('#service_address').val();
-    requestData.customerLandmark = $('#service_landmark').val();
-    requestData.customerLandmark = $('#service_alternate_phone_no').val();
-    requestData.customerPreference = $('#cook_preferences').val();
+    requestData.city = $('#service_city').val();
+    requestData.state = $('#service_state').val();
+    requestData.address = $('#service_address').val();
+    requestData.landmark = $('#service_landmark').val();
+    requestData.alternatePhoneNo = $('#service_alternate_phone_no').val();
+    requestData.cookPreference= $('#cook_preferences').val();
     requestData.numberOfMembers = $('#no_of_people').val();
     console.log("form data", requestData);
 
-    if (!requestData.customerName && !requestData.customerEmail && !requestData.customerPhone && !requestData.numberOfMembers && !requestData.customerPincode && !requestData.customerAddress) {
+    if (!requestData.customerName && !requestData.customerEmail && !requestData.customerPhone && !requestData.numberOfMembers && !requestData.pincode && !requestData.address) {
 
         errMsg = 'All fields are required.';
 
@@ -1462,7 +1462,7 @@ var applyForService = function (el) {
 
     }
 
-    else if (isNaN(requestData.customerPhone) || requestData.customerPincode.length != 6) {
+    else if (isNaN(requestData.pincode) || requestData.pincode.length != 6) {
 
         errMsg = 'Enter valid pincode';
 
@@ -1470,7 +1470,7 @@ var applyForService = function (el) {
 
     }
 
-    else if (requestData.customerAddress == "") {
+    else if (requestData.address == "") {
         errMsg = 'Enter Address';
 
         $('#service_error').html(errMsg);
@@ -1558,18 +1558,18 @@ var applyForOccasionalService = function (el) {
     requestData.customerName = $('#service_ocassion_name').val();
     requestData.customerEmail = $('#service_ocassion_email').val();
     requestData.customerPhone = $('#service_ocassion_phone_no').val();
-    requestData.customerPincode = $('#service_ocassion_pincode').val();
+    requestData.pincode = $('#service_ocassion_pincode').val();
     requestData.customerLocation = $('#service_ocassion_location').val();
-    requestData.customerCity = $('#service_ocassion_city').val();
-    requestData.customerState = $('#service_ocassion_state').val();
-    requestData.customerAddress = $('#service_ocassion_address').val();
-    requestData.customerLandmark = $('#service_ocassion_landmark').val();
-    requestData.customerLandmark = $('#service_ocassion_alternate_phone_no').val();
-    requestData.customerPreference = $('#service_ocassion_cook_preferences').val();
+    requestData.city = $('#service_ocassion_city').val();
+    requestData.state = $('#service_ocassion_state').val();
+    requestData.address = $('#service_ocassion_address').val();
+    requestData.landmark = $('#service_ocassion_landmark').val();
+    requestData.alternatePhoneNo = $('#service_ocassion_alternate_phone_no').val();
+    requestData.cookPreference = $('#service_ocassion_cook_preferences').val();
     requestData.numberOfMembers = $('#service_ocassion_no_of_people').val();
     console.log("form data", requestData);
 
-    if (!requestData.customerName && !requestData.customerEmail && !requestData.customerPhone && !requestData.numberOfMembers && !requestData.customerPincode && !requestData.customerAddress) {
+    if (!requestData.customerName && !requestData.customerEmail && !requestData.customerPhone && !requestData.numberOfMembers && !requestData.pincode && !requestData.address) {
 
         errMsg = 'All fields are required.';
 
@@ -1585,7 +1585,7 @@ var applyForOccasionalService = function (el) {
 
     }
 
-    else if (isNaN(requestData.customerPhone) || requestData.customerPincode.length != 6) {
+    else if (isNaN(requestData.pincode) || requestData.pincode.length != 6) {
 
         errMsg = 'Enter valid pincode';
 
@@ -1593,7 +1593,7 @@ var applyForOccasionalService = function (el) {
 
     }
 
-    else if (requestData.customerAddress == "") {
+    else if (requestData.address == "") {
         errMsg = 'Enter Address';
 
         $('#service_error').html(errMsg);
