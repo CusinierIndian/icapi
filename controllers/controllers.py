@@ -119,7 +119,7 @@ class BookingController(BaseController):
 			isRequiredInEvening = True
 		bookACook = TemporaryBooking(str(generateUniqueId()), cookBookingDetails.get('customerName')
 			, cookBookingDetails.get('customerLocation'), cookBookingDetails.get('customerPhone')
-			, cookBookingDetails.get('customerEmail'), cookBookingDetails.get('customerPreference')
+			, cookBookingDetails.get('customerEmail'), cookBookingDetails.get('cookPreference')
 			, isRequiredInMorning, isRequiredInEvening
 			, cookBookingDetails.get('numberOfMembers'))
 

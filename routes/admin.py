@@ -68,7 +68,8 @@ def getCookDetails():
 def getAllCookDetails():
 	accessToken = request.headers.get('access-token')
 	if access-token is None:
-		 
+		return 'TODO'
+
 
 
 

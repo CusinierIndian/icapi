@@ -95,13 +95,13 @@ class TemporaryBooking(Base):
 
 	__tablename__ = 'temporary_booking'
 
-	def __init__(self, id, customerName, customerLocation, customerPhone, customerEmail, customerPreference, isRequiredInMorning, isRequiredInEvening, numberOfMembers):
+	def __init__(self, id, customerName, customerLocation, customerPhone, customerEmail, cookPreference, isRequiredInMorning, isRequiredInEvening, numberOfMembers):
 		self.id = id
 		self.customerName = customerName
 		self.customerLocation = customerLocation
 		self.customerPhone = customerPhone
 		self.customerEmail = customerEmail
-		self.customerPreference = customerPreference
+		self.cookPreference = cookPreference
 		self.isRequiredInMorning = isRequiredInMorning
 		self.isRequiredInEvening = isRequiredInEvening
 		self.numberOfMembers = numberOfMembers
