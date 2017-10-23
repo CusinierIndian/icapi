@@ -1425,6 +1425,8 @@ var contactUs = function () {
 }
 
 var applyForService = function (el) {
+    var xyz;
+    $('button').click(function (el){
 
     console.log("apply for service", el);
 
@@ -1432,6 +1434,7 @@ var applyForService = function (el) {
 
     var requestData = {}, errMsg = '';
 
+    requestData.bookingfor=$(this).attr('id') 
     requestData.customerName = $('#service_name').val();
     requestData.customerEmail = $('#service_email').val();
     requestData.customerPhone = $('#service_phone_no').val();
@@ -1545,16 +1548,27 @@ var applyForService = function (el) {
 
     }
 
+ });
 }
 
 var applyForOccasionalService = function (el) {
 
-    console.log("apply for service", el);
+    var xyz;
+    $('button').click(function (el){
 
+//console.log(xyz);
+
+    
+  
+
+    //console.log("apply for service", el);
+   
+    
     $('#service_error').html('');
 
     var requestData = {}, errMsg = '';
-
+    requestData.bookingfor=$(this).attr('id') 
+    
     requestData.customerName = $('#service_ocassion_name').val();
     requestData.customerEmail = $('#service_ocassion_email').val();
     requestData.customerPhone = $('#service_ocassion_phone_no').val();
@@ -1666,6 +1680,7 @@ var applyForOccasionalService = function (el) {
         });
 
     }
+    });
 
 }
 
