@@ -72,7 +72,25 @@ def customerFeedback():
 	else: 
 		from controllers.controllers import FeedbackController
 		feedbackResponse = FeedbackController().customerFeedBack(feedback)
+<<<<<<< HEAD
+		if feedbackResponse and feedbackResponse.get('notification').get('status') == 'Success':
+			mail = Mail(app)
+			with  app.app_context():
+				with mail.connect() as conn:
+					feedback = feedbackResponse.get('data').get('comments')[0].get('feedback')
+					customerName = feedbackResponse.get('data').get('customerName')
+					temp = {
+						'feedbackId' : feedbackResponse.get('data').get('comments')[0].get('feedbackId')
+					}
+					token = safeTimed.dumps(temp)
+					link = 'http://127.0.0.1:5000/ic/approve/'+token
+					modifyLink = 'http://127.0.0.1:5000/ic/modify/'+token
+					msg = Message(subject='Feedback Approval', recipients=['souvik2230@gmail.com '], sender='indiancuisinier@gmail.com')
+					msg.html = render_template('test.html', feedback = feedback, token = token, link = link, modifyLink = modifyLink, customerName = customerName)
+					conn.send(msg)
+=======
 		sendMail(feedbackResponse)
+>>>>>>> 3395ca56efeec827c38ac984ab666a52803d65db
 		return jsonify(feedbackResponse)
 
 

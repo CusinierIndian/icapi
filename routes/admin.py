@@ -67,8 +67,8 @@ def getCookDetails():
 @admin.route('/getallcooks', methods=['GET'])
 def getAllCookDetails():
 	accessToken = request.headers.get('access-token')
-	return accessToken
- 
+	if access-token is None:
+		 
 
 
 
