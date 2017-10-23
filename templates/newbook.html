@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+	<body>
+		{% if details.get('notification').get('status') == 'Success'%}
+		<label>Customer Name:- </label><label>{{details.get('data').get('customerName')}}</label><br/>
+		<label>Customer Email:- </label><label>{{details.get('data').get('customerEmail')}}</label><br/>
+		<label>Customer Phone:- </label><label>{{details.get('data').get('customerPhone')}}</label><br/>
+		<label>Customer Location:- </label><label>{{details.get('data').get('customerLocation')}}</label><br/>
+		<label>Customer Preference:- </label><label>{{details.get('data').get('customerPreference')}}</label><br/>
+		<label>Number of members:- </label><label>{{details.get('data').get('numberOfMembers')}}</label><br/>
+		{%endif%}
+	</body>
+</html>

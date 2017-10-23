@@ -15,7 +15,6 @@ def index():
 
 if __name__ == '__main__':
 	from models.models import db
-	# print db.Model.metadata.tables
 	db.create_all()
 	app.run(debug=True)
 

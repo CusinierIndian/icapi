@@ -62,6 +62,11 @@ class AdminController(BaseController):
 		print optAndCol
 		return self.dbConnection.getCookDetails(optAndCol)
 
+
+	#get Admin users
+	def getAdminUsers(self):
+		return self.dbConnection.getAdminUsers()
+
 				
 
 

@@ -3,6 +3,7 @@ from flask_mail import Mail, Message
 from decorators.decorators import async
 from itsdangerous import URLSafeTimedSerializer
 from config import app
+import jwt
 
 admin = Blueprint('admin', __name__)
 
@@ -61,6 +62,12 @@ def getCookDetails():
 	queryParams = request.args
 	from controllers.controllers import AdminController
 	return jsonify(AdminController().getCookDetails(queryParams))
+
+#Get all cook Details
+@admin.route('/getallcooks', methods=['GET'])
+def getAllCookDetails():
+	accessToken = request.headers.get('access-token')
+	return accessToken
  
 
 

@@ -50,7 +50,16 @@ def bookCook():
 		return jsonify(ExceptionTransformers().transformException(Constants.INVALID_INPUT, Constants.INVALID_JSON, Constants.STATUS_FAILED))
 	else:
 		from controllers.controllers import BookingController
-		return jsonify(BookingController().bookACook(cookBookingDetails))
+		response = BookingController().bookACook(cookBookingDetails)
+		from utility.mailer import Mailer
+		from controllers.controllers import AdminController
+		adminUsers = AdminController().getAdminUsers()
+		adminUsersEmailList = []
+		if adminUsers:
+			for admin in adminUsers:
+				adminUsersEmailList.append(admin.email)
+			Mailer().sendAsyncMail(subject='New Booking details', senders = 'indiancuisinier@gmail.com', receivers=adminUsersEmailList, body='newbook.html', details=response)
+		return jsonify(response)
 
 
 #Temporary feedback api from customers

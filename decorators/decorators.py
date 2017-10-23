@@ -5,3 +5,7 @@ def async(f):
         thr = Thread(target=f, args=args, kwargs=kwargs)
         thr.start()
     return wrapper
+
+# def validation(f):
+# 	def wrapper(*args, **kwargs):
+		

@@ -226,6 +226,18 @@ class DBOperations:
 
 
 
+	#get admin users
+	def getAdminUsers(self):
+		try:
+			response = AdminUser.query.all()
+		except Exception as e:
+			return None
+		else:
+			return response
+
+
+
+
 
 
 
