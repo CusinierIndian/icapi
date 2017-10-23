@@ -39,7 +39,7 @@ class Careers(Base):
 
 	id = Column(String(100), primary_key=True, nullable=False)
 	name = Column(String(255), nullable=False)
-	email = Column(String(255), unique=True, nullable=True)
+	email = Column(String(255), nullable=True)
 	phone = Column(String(15), unique=True, nullable=False)
 	role = Column(String(50), nullable=False)
 
