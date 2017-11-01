@@ -119,9 +119,9 @@
 
             <div class="input-group col-lg-4 col-xl-3">
 
-              <input type="email" class="form-control" id="subscribe_user_email" name="email" placeholder="Email" aria-label="email" required="true">
+              <input type="email" class="form-control" id="subscribe_user_email" name="email" placeholder="Email" aria-label="email" required="true  data-fv-emailaddress-message="The value is not a valid email address" ">
 
-
+              
               <span class="input-group-btn">
 
                                 <button class="btn btn-success" type="submit" onclick="subscribe_user()">Subscribe</button>
@@ -131,8 +131,9 @@
             </div>
 
 
+
           </div>
-          
+
 
 
         </div>
@@ -978,7 +979,7 @@
 
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
-            <button type="submit" id="household" class="btn btn-info" onclick="applyForService(this)">Book</button>
+            <button type="submit" id="household" class="btn btn-info">Book</button>
 
           </div>
 
@@ -1197,7 +1198,7 @@
 
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
-            <button type="submit" id="occasion" class="btn btn-info" onclick="applyForOccasionalService(this)">Book</button>
+            <button type="submit" id="occasion" class="btn btn-info">Book</button>
 
           </div>
 
